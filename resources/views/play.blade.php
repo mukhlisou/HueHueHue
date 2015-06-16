@@ -25,4 +25,5 @@ echo "hooing";
 			@endforeach
 			</tbody>
 		</table>
-		<a href="/coba">Delete</a>
+		<?php $url = '/create'; ?>
+		<a href="{{URL::to($url)}}">Tambah baru</a>
