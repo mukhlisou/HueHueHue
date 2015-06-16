@@ -25,18 +25,18 @@ class HomeController extends Controller {
 	
 	}
 
-	public function coba()
-	{
-        return view('welcome');
-	
-	}
-
 	public function delete($id)
 	{
 		$row = MonitorModel::where('id','=',$id);
 		$row->delete();
 		$monitor = MonitorModel::all();
 		return redirect()->back();
+	
+	}
+		public function update($id)
+	{
+		$row = MonitorModel::where('id','=',$id)->first();
+		return view('edit', ['row' => $row]);
 	
 	}
 	public function create(){
@@ -68,16 +68,16 @@ class HomeController extends Controller {
 		$data->lbsmot = Input::get('lbsmot');
 		$data->cbog = Input::get('cbog');
 		$data->pb = Input::get('pb');
-		$data->OD160 = Input::get('OD160');
-		$data->OD250 = Input::get('OD250');
-		$data->OD400 = Input::get('OD400');
-		$data->OD630 = Input::get('OD630');
-		$data->ID400 = Input::get('ID400');
-		$data->ID630 = Input::get('ID630');
-		$data->OD4 = Input::get('OD4');
-		$data->ID4 = Input::get('ID4');
-		$data->ID6 = Input::get('ID6');
-		$data->ID8 = Input::get('ID8');
+		$data->OD160 = Input::get('160OD');
+		$data->OD250 = Input::get('250OD');
+		$data->OD400 = Input::get('400OD');
+		$data->OD630 = Input::get('630OD');
+		$data->ID400 = Input::get('400ID');
+		$data->ID630 = Input::get('630ID');
+		$data->OD4 = Input::get('4OD');
+		$data->ID4 = Input::get('4ID');
+		$data->ID6= Input::get('6ID');
+		$data->ID8 = Input::get('8ID');
 		$data->sktm300 = Input::get('sktm300');
 		$data->sktm240 = Input::get('sktm240');
 		$data->sutm = Input::get('sutm');
@@ -93,10 +93,9 @@ class HomeController extends Controller {
 		return redirect('/');
 	}
 
-	public function update($id)
+	public function edit($idpelanggan)
 	{
-		$data = MonitorModel::find($idpelanggan);
-
+		$data = MonitorModel::where('idpelanggan',$idpelanggan)->first();
 		$data->noagenda = Input::get('noagenda');
 		$data->tariflama = Input::get('tariflama');
 		$data->lamadaya = Input::get('lamadaya');
@@ -118,16 +117,16 @@ class HomeController extends Controller {
 		$data->lbsmot = Input::get('lbsmot');
 		$data->cbog = Input::get('cbog');
 		$data->pb = Input::get('pb');
-		$data->OD160 = Input::get('OD160');
-		$data->OD250 = Input::get('OD250');
-		$data->OD400 = Input::get('OD400');
-		$data->OD630 = Input::get('OD630');
-		$data->ID400 = Input::get('ID400');
-		$data->ID630 = Input::get('ID630');
-		$data->OD4 = Input::get('OD4');
-		$data->ID4 = Input::get('ID4');
-		$data->ID6 = Input::get('ID6');
-		$data->ID8 = Input::get('ID8');
+		$data->OD160 = Input::get('160OD');
+		$data->OD250 = Input::get('250OD');
+		$data->OD400 = Input::get('400OD');
+		$data->OD630 = Input::get('630OD');
+		$data->ID400 = Input::get('400ID');
+		$data->ID630 = Input::get('630ID');
+		$data->OD4 = Input::get('4OD');
+		$data->ID4 = Input::get('4ID');
+		$data->ID6= Input::get('6ID');
+		$data->ID8 = Input::get('8ID');
 		$data->sktm300 = Input::get('sktm300');
 		$data->sktm240 = Input::get('sktm240');
 		$data->sutm = Input::get('sutm');

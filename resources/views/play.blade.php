@@ -19,8 +19,12 @@ echo "hooing";
 					<?php $lala = $field->id; 
 					$urls = '/delete/'.$lala;
 					?>
-				<a href="{{URL::to($urls)}}">Delete</a></button>
-						
+				<a href="{{URL::to($urls)}}">Delete</a></td>
+				<td>
+					<?php $lala = $field->id; 
+					$urlu = '/update/'.$lala;
+					?>
+				<a href="{{URL::to($urlu)}}">Edit</a></td>		
 			</tr>
 			@endforeach
 			</tbody>
