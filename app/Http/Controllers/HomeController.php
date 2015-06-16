@@ -3,6 +3,7 @@
 use App\MonitorModel;
 use Http\Requests;
 use Request;
+use Illuminate\Support\Facades\Input;
 
 class HomeController extends Controller {
 
@@ -24,12 +25,6 @@ class HomeController extends Controller {
 	
 	}
 
-	public function coba()
-	{
-        return view('welcome');
-	
-	}
-
 	public function delete($id)
 	{
 		$row = MonitorModel::where('id','=',$id);
@@ -38,13 +33,19 @@ class HomeController extends Controller {
 		return redirect()->back();
 	
 	}
+		public function update($id)
+	{
+		$row = MonitorModel::where('id','=',$id)->first();
+		return view('edit', ['row' => $row]);
+	
+	}
 	public function create(){
 		return view('create');
 	}
 
 	public function add()
 	{
-		$data = MonitorModel;
+		$data = new MonitorModel;
 
 		$data->noagenda = Input::get('noagenda');
 		$data->tariflama = Input::get('tariflama');
@@ -67,16 +68,16 @@ class HomeController extends Controller {
 		$data->lbsmot = Input::get('lbsmot');
 		$data->cbog = Input::get('cbog');
 		$data->pb = Input::get('pb');
-		$data->160OD = Input::get('160OD');
-		$data->250OD = Input::get('250OD');
-		$data->400OD = Input::get('400OD');
-		$data->630OD = Input::get('630OD');
-		$data->400ID = Input::get('400ID');
-		$data->630ID = Input::get('630ID');
-		$data->4OD = Input::get('4OD');
-		$data->4ID = Input::get('4ID');
-		$data->6ID = Input::get('6ID');
-		$data->8ID = Input::get('8ID');
+		$data->OD160 = Input::get('160OD');
+		$data->OD250 = Input::get('250OD');
+		$data->OD400 = Input::get('400OD');
+		$data->OD630 = Input::get('630OD');
+		$data->ID400 = Input::get('400ID');
+		$data->ID630 = Input::get('630ID');
+		$data->OD4 = Input::get('4OD');
+		$data->ID4 = Input::get('4ID');
+		$data->ID6= Input::get('6ID');
+		$data->ID8 = Input::get('8ID');
 		$data->sktm300 = Input::get('sktm300');
 		$data->sktm240 = Input::get('sktm240');
 		$data->sutm = Input::get('sutm');
