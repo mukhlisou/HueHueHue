@@ -93,10 +93,9 @@ class HomeController extends Controller {
 		return redirect('/');
 	}
 
-	public function update($id)
+	public function edit($idpelanggan)
 	{
-		$data = MonitorModel::find($idpelanggan);
-
+		$data = MonitorModel::where('idpelanggan',$idpelanggan)->first();
 		$data->noagenda = Input::get('noagenda');
 		$data->tariflama = Input::get('tariflama');
 		$data->lamadaya = Input::get('lamadaya');

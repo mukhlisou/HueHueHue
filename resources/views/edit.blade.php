@@ -4,7 +4,9 @@
             <div class="col-md-12">
                 <h2>Tambah Data</h2>
             </div>
-            <form action="{{URL::to('/create/add')}}" method="post">
+            <?php $idpelanggan = $row->idpelanggan; 
+            $urls ='/edit/'.$idpelanggan ?>
+            <form action="{{URL::to($urls)}}" method="post">
                 <div class="col-md-12">
 
                     <div class="col-md-6 col-sm-6 col-xs-6">
@@ -117,11 +119,11 @@
                         </div>
                         <div class="form-group">
                             <label for="630OD">630 OD</label>
-                            <input name="630OD" type="text" class="form-control" id="630OD" value="{{$row->630OD}}">
+                            <input name="630OD" type="text" class="form-control" id="630OD" value="{{$row->OD630}}">
                         </div>
                         <div class="form-group">
                             <label for="400ID">400 ID</label>
-                            <input name="400ID" type="text" class="form-control" id="400ID" value="{{$row->400ID}}">
+                            <input name="400ID" type="text" class="form-control" id="400ID" value="{{$row->ID400}}">
                         </div>
                         <div class="form-group">
                             <label for="630ID">630 ID</label>
