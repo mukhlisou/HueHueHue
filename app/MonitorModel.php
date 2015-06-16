@@ -7,8 +7,8 @@ class MonitorModel extends Model {
 	//
 	protected $fillable = ['id','noagenda','tariflama','lamadaya','tarifbaru','dayabaru','idpelanggan','namapelanggan','alamat',
 						   'tanggalbayarbp','pengawas','pelaksana','nospk','jenispekerjaan','koorx','koory',
-						   'sla','statuspengerjaan','lbsman','lbsmot','lbsmot','sbog','pb','160OD','250OD','400OD',
-						   '630OD','400ID','630ID','4OD','4ID','6ID','8ID','sktm300','sktm240','sutm','skutm','scoretm',
+						   'sla','statuspengerjaan','lbsman','lbsmot','lbsmot','sbog','pb','OD160','OD250','OD400',
+						   'OD630','ID400','ID630','OD4','ID4','ID6','ID8','sktm300','sktm240','sutm','skutm','scoretm',
 						   'scoretr','nyfgby','jtr','keterangan'];
 
 	protected $table = 'monitor';
