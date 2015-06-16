@@ -1,6 +1,8 @@
 <?php namespace App\Http\Controllers;
 
 use App\MonitorModel;
+use Http\Requests;
+use Request;
 
 class HomeController extends Controller {
 
@@ -22,4 +24,21 @@ class HomeController extends Controller {
 	
 	}
 
+	public function coba()
+	{
+        return view('welcome');
+	
+	}
+
+	public function delete($id)
+	{
+		$row = MonitorModel::where('id','=',$id);
+		$row->delete();
+		$monitor = MonitorModel::all();
+		return redirect()->back();
+	
+	}
+	public function create(){
+		return view('create');
+	}
 }

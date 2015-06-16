@@ -12,7 +12,9 @@
 */
 
 Route::get('/','HomeController@index');
-
+Route::get('coba','HomeController@coba');
+Route::get('/delete/{id}','HomeController@delete');
+Route::get('/create/{id}','HomeController@create');
 
 
 /*kita bikin alur buat pindah2 halaman disini*/
