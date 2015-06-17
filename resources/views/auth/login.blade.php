@@ -1,6 +1,4 @@
-@extends('layouts.start')
 
-@section('content')
 <div class="container-fluid">
 	<div class="row">
 		<div id = "loginform" class="col-md-8 col-md-offset-2">
@@ -21,13 +19,13 @@
 					@endif
 				</div>
 				<div>
-					<form class="form-horizontal" role="form" method="POST" action="">
+					<form class="form-horizontal" role="form" method="POST" action="{{URL::to('auth/login')}}">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 						<div class="form-group loginformg">
 							<label class="col-md-3 control-label"></label>
 							<div class="col-md-7">
-								<input type="text" class="form-control logininput" name="username" placeholder="Username">
+								<input type="text" class="form-control logininput" name="email" placeholder="Username">
 							</div>
 						</div>
 
@@ -62,4 +60,3 @@
 		</div>
 	</div>
 </div>
-@endsection
