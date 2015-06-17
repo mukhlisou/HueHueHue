@@ -144,6 +144,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         'Maatwebsite\Excel\ExcelServiceProvider',
+        'Illuminate\Html\HtmlServiceProvider',
 
 
     ],
@@ -194,6 +195,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
         'Excel' => 'Maatwebsite\Excel\Facades\Excel',
+        'Form'=> 'Illuminate\Html\FormFacade',
+        'HTML'=> 'Illuminate\Html\HtmlFacade',
     ],
 
 ];

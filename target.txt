@@ -11,4 +11,6 @@
 	-overall (home)								V
 5. Login									X (OTW)
 6. register									X (OTW)
+7. import excel                                 V
+8. export excel                                 X (yang belum: format export file(headernya 2 row, kolom id ilangin kalo bisa))
 8. TAMPILAAN!!!!! (SUSAAAAHH!)							X
