@@ -14,13 +14,14 @@ Route::controllers([
     'auth' => 'Auth\AuthController',
     'password' =>'Auth\PasswordController'
 ]);
-Route::get('/','HomeController@index');
-Route::get('/delete/{id}','HomeController@delete');
-Route::get('/create','HomeController@create');
-Route::post('/create/add','HomeController@add');
-Route::get('/update/{id}','HomeController@update');
-Route::post('/edit/{id}','HomeController@edit');
-Route::get('/export','HomeController@export');
+
+Route::get('/',['middleware' => 'auth', 'uses' =>'HomeController@index']);
+Route::get('/delete/{id}',['middleware' => 'auth', 'uses' =>'HomeController@delete']);
+Route::get('/create',['middleware' => 'auth', 'uses' =>'HomeController@create']);
+Route::post('/create/add',['middleware' => 'auth', 'uses' =>'HomeController@add']);
+Route::get('/update/{id}',['middleware' => 'auth', 'uses' =>'HomeController@update']);
+Route::post('/edit/{id}',['middleware' => 'auth', 'uses' =>'HomeController@edit']);
+Route::get('/export',['middleware' => 'auth', 'uses' =>'HomeController@export']);
 
 
 /*kita bikin alur buat pindah2 halaman disini*/

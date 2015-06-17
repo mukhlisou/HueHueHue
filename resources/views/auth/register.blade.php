@@ -1,6 +1,4 @@
-@extends('layouts.default')
 
-@section('content')
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
@@ -18,7 +16,7 @@
 						</div>
 					@endif
 
-					<form class="form-horizontal" role="form" method="POST" action="/auth/register">
+					<form class="form-horizontal" role="form" method="POST" action="{{URL::to('auth/register')}}">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 						<div class="form-group">
@@ -52,6 +50,7 @@
 						<div class="form-group">
 							<div class="col-md-6 col-md-offset-4">
 								<button type="submit" class="btn btn-primary">
+								
 									Register
 								</button>
 							</div>
@@ -62,4 +61,3 @@
 		</div>
 	</div>
 </div>
-@endsection
