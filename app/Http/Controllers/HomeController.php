@@ -193,7 +193,7 @@ class HomeController extends Controller {
 
 				$data->save();
 			}else{
-				$data = MonitorModel::find($idpelanggan);
+                $data = MonitorModel::where('idpelanggan',$row->idpelanggan)->first();
 
 				$data->noagenda = $row->noagenda;
 				$data->tariflama = $row->tariflama;
