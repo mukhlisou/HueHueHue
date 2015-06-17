@@ -20,6 +20,7 @@ Route::get('/create','HomeController@create');
 Route::post('/create/add','HomeController@add');
 Route::get('/update/{id}','HomeController@update');
 Route::post('/edit/{id}','HomeController@edit');
+Route::get('/export','HomeController@export');
 
 
 /*kita bikin alur buat pindah2 halaman disini*/

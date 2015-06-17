@@ -241,4 +241,30 @@ class HomeController extends Controller {
 		}
 		
 	}
+
+	public function import()
+	{
+
+	}
+
+	public function export()
+	{
+		
+		\Excel::create('TestFile', function($excel) {
+
+		// Set the title
+		$excel->setTitle('TestTitle');
+
+		$excel->sheet('Sheet1', function($sheet) {
+		
+			// Sheet manipulation
+			$sheet->row(1, array('id','noagenda','tariflama','lamadaya','tarifbaru','dayabaru','idpelanggan','namapelanggan','alamat','tanggalbayarbp','pengawas','pelaksana','nospk','jenispekerjaan','koorx','koory','sla','statuspengerjaan','lbsman','lbsmot','cbog','pb','OD160','OD250','OD400','OD630','ID400','ID630','OD4','ID4','ID6','ID8','sktm300','sktm240','sutm','skutm','scoretm','scoretr','nyfgby','jtr','keterangan'));
+
+			$monitor = MonitorModel::all()->first()->getAttributes();
+			//dd($monitor);
+			$sheet->row(2, $monitor);
+		});
+
+		})->download('xls');
+	}
 }

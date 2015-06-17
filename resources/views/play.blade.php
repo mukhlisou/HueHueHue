@@ -31,3 +31,6 @@ echo "hooing";
 		</table>
 		<?php $url = '/create'; ?>
 		<a href="{{URL::to($url)}}">Tambah baru</a>
+
+		<?php $urlex = '/export'; ?>
+		<a href="{{URL::to($urlex)}}">export</a>
