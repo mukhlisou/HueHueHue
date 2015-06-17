@@ -163,6 +163,7 @@ class HomeController extends Controller {
 						if($id == null){
 							$data = new MonitorModel;
 
+
 							if($row[1] !=null){$data->noagenda = $row[1];}
 							if($row[2] !=null){$data->tariflama = $row[2];}
 							if($row[3] !=null){$data->lamadaya = $row[3];}
@@ -206,7 +207,7 @@ class HomeController extends Controller {
 
 							$data->save();
 						}else{
-							$data = MonitorModel::where('idpelanggan',$row[6])->first();
+							$data = MonitorModel::where('idpelanggan',[$row[6]])->first();
 
 							if($row[1] !=null){$data->noagenda = $row[1];}
 							if($row[2] !=null){$data->tariflama = $row[2];}
