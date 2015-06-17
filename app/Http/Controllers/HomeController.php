@@ -258,7 +258,11 @@ class HomeController extends Controller {
 		$excel->sheet('Sheet1', function($sheet) {
 		
 			// Sheet manipulation
-			$sheet->row(1, array('id','noagenda','tariflama','lamadaya','tarifbaru','dayabaru','idpelanggan','namapelanggan','alamat','tanggalbayarbp','pengawas','pelaksana','nospk','jenispekerjaan','koorx','koory','sla','statuspengerjaan','lbsman','lbsmot','cbog','pb','OD160','OD250','OD400','OD630','ID400','ID630','OD4','ID4','ID6','ID8','sktm300','sktm240','sutm','skutm','scoretm','scoretr','nyfgby','jtr','keterangan'));
+			$sheet->row(1, array('id','noagenda','tariflama','lamadaya','tarifbaru','dayabaru','idpelanggan',
+								 'namapelanggan','alamat','tanggalbayarbp','pengawas','pelaksana','nospk','jenispekerjaan',
+								 'koorx','koory','sla','statuspengerjaan','lbsman','lbsmot','cbog','pb','OD160','OD250','OD400',
+								 'OD630','ID400','ID630','OD4','ID4','ID6','ID8','sktm300','sktm240','sutm','skutm','scoretm',
+								 'scoretr','nyfgby','jtr','keterangan'));
 
 			$monitor = MonitorModel::all();
 			//dd($monitor);
