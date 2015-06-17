@@ -275,20 +275,70 @@ class HomeController extends Controller {
 		$excel->sheet('Sheet1', function($sheet) {
 		
 			// Sheet manipulation
-			$sheet->row(1, array('id','noagenda','tariflama','lamadaya','tarifbaru','dayabaru','idpelanggan',
-								 'namapelanggan','alamat','tanggalbayarbp','pengawas','pelaksana','nospk','jenispekerjaan',
-								 'koorx','koory','sla','statuspengerjaan','lbsman','lbsmot','cbog','pb','160OD','250OD','400OD',
-								 '630OD','400ID','630ID','4OD','4ID','ID6','ID8','sktm300','sktm240','sutm','skutm','scoretm',
-								 'scoretr','nyfgby','jtr','keterangan'));
+			$sheet->setAutoSize(false);
+			
+			$sheet->row(1, array('No','No Agenda','Tarif Lama','Lama Daya','Tarif Baru','Daya Baru','ID Pelanggan',
+								 'Nama Pelanggan','Alamat','Tanggal Bayar BP','Pengawas','Pelaksana','No SPK','Jenis Pekerjaan',
+								 'Koordinat Lokasi',null,'SLA','Status / Progress Pengerjaan','Kubikel',null,null,null,'Trafo',null,null,
+								 null,null,null,'PHBTR / Rak TR',null,null,null,'SKTM',null,'SUTM','SKUTM','S Core TM',
+								 'S Core TR','NYFGBY','JTR','Keterangan'));
+			$sheet->row(2, array(null,null,null,null,null,null,null,null,null,null,null,null,null,null,
+								 'X','Y',null,null,'LBS Man','LBS Mot','CBOG','PB','160 OD','250 OD','400 OD',
+								 '630 OD','400 ID','630 ID','4 OD','4 ID','6 ID','8 ID','3x300','3x240',null,null,'1x35',
+								 '1x240','4x95','3x70 + 50',null));
 
 			$monitor = MonitorModel::all();
 			//dd($monitor);
-			$index = 2;
+			$index = 3;
 			foreach ($monitor as $row) {
 				$sheet->row($index, $row->getAttributes());
+				$sheet->row($index, array($index-2));
 				$index = $index+1;
 			}
-			
+			$sheet->mergeCells('A1:A2');
+			$sheet->mergeCells('B1:B2');
+			$sheet->mergeCells('C1:C2');
+			$sheet->mergeCells('D1:D2');
+			$sheet->mergeCells('E1:E2');
+			$sheet->mergeCells('F1:F2');
+			$sheet->mergeCells('G1:G2');
+			$sheet->mergeCells('H1:H2');
+			$sheet->mergeCells('I1:I2');
+			$sheet->mergeCells('J1:J2');
+			$sheet->mergeCells('K1:K2');
+			$sheet->mergeCells('L1:L2');
+			$sheet->mergeCells('M1:M2');
+			$sheet->mergeCells('N1:N2');
+			$sheet->mergeCells('O1:P1');
+			$sheet->mergeCells('Q1:Q2');
+			$sheet->mergeCells('R1:R2');
+			$sheet->mergeCells('S1:V1');
+			$sheet->mergeCells('W1:AB1');
+			$sheet->mergeCells('AC1:AF1');
+			$sheet->mergeCells('AG1:AH1');
+			$sheet->mergeCells('AI1:AI2');
+			$sheet->mergeCells('AJ1:AJ2');
+			$sheet->mergeCells('AO1:AO2');
+
+			$sheet->cells('A1:AO2', function($cells) {
+
+				// manipulate the range of cells
+				$cells->setAlignment('left');
+				$cells->setVAlignment('top');
+				$cells->setBackground('#4BACC6');
+				$cells->setFontColor('#ffffff');
+				$cells->setFontSize(11);
+				$cells->setFontWeight('bold');
+				$cells->setAlignment('center');
+				$cells->setVAlignment('center');
+			});
+			$sheet->setBorder('A1:AO2', 'thin');
+			$sheet->setWidth(array(
+				'A'	=> 5,'B' => 12,'C' => 12,'D' => 12,'E' => 12,'F' => 12,'G' => 14,'H' => 20,'I' => 35,'J' => 16,'K' => 12,'L' => 11,'M' => 10,'N' => 17,'O' => 10,
+				'P' => 10,'Q' => 10,'R' => 26,'S' => 10,'T' => 10,'U' => 10,'V' => 10,'W' => 10,'X' => 10,'Y' => 10,'Z' => 10,'AA' => 10,'AB' => 10,'AC' => 10,'AD' => 10,
+				'AE' => 10,'AF' => 10,'AG' => 10,'AH' => 10,'AI' => 10,'AJ' => 10,'AK' => 10,'AL' => 10,'AM' => 10,'AN' => 10,'AO' => 30,
+			));
+
 		});
 
 		})->download('xls');
