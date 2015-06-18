@@ -34,3 +34,15 @@ echo "hooing";
 
 		<?php $urlex = '/export'; ?>
 		<a href="{{URL::to($urlex)}}">export</a>
+		<br/><br/>
+		<form method="POST" action="http://localhost/HueHueHue/public/import" accept-charset="UTF-8" enctype="multipart/form-data"><input name="_token" type="hidden" value="leLDhqWQJZ8uZC2dMXLIuk2npQUzLqXhjskNhkMV"> <label for="file" id="" class="">File</label> <input name="file" type="file" id="file"> 
+		<input type="submit" value="Import"> </form>
+		<!-- {{ Form::open(array('url'=>'/import','files'=>true)) }}
+  
+		{{ Form::label('file','File',array('id'=>'','class'=>'')) }}
+		{{ Form::file('file','',array('id'=>'','class'=>'')) }}
+		<br/>
+		submit buttons 
+		{{ Form::submit('Import') }}
+		
+		{{ Form::close() }}-->

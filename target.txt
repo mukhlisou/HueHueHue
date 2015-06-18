@@ -1,14 +1,16 @@
 1. create
-	-create one by one							V
-	-create by excel							X
+	-create one by one							            V
+	-create by excel							            V
 2. update
-	-update one by one							V
-	-update by excel							X
+	-update one by one							            V
+	-update by excel							            V
 3. delete
-	-delete row 								V
+	-delete row 								            V
 4. read
 	-satu satu(klik link ke row yg mau diliat)				X (gampang)
-	-overall (home)								V
-5. Login									X (OTW)
-6. register									X (OTW)
-8. TAMPILAAN!!!!! (SUSAAAAHH!)							X
+	-overall (home)								            V
+5. Login & logout							                X (OTW)
+6. register									                X (OTW)
+7. import excel                                             V
+8. export excel                                             V
+8. TAMPILAAN!!!!! (SUSAAAAHH!)							    X

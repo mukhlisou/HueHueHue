@@ -22,6 +22,7 @@ Route::post('/create/add',['middleware' => 'auth', 'uses' =>'HomeController@add'
 Route::get('/update/{id}',['middleware' => 'auth', 'uses' =>'HomeController@update']);
 Route::post('/edit/{id}',['middleware' => 'auth', 'uses' =>'HomeController@edit']);
 Route::get('/export',['middleware' => 'auth', 'uses' =>'HomeController@export']);
+Route::any('/import',['middleware' => 'auth', 'uses' =>'HomeController@import']);
 
 
 /*kita bikin alur buat pindah2 halaman disini*/

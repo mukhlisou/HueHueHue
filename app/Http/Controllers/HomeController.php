@@ -142,109 +142,126 @@ class HomeController extends Controller {
 		return redirect('/');
 	}
 
-	public function insert($input)
-	{
-		foreach ($input as $row) {
-			$id = MonitorModel::find('idpelanggan',$row->idpelanggan);
-
-			if($id == null){
-				$data = new MonitorModel;
-
-				$data->noagenda = $row->noagenda;
-				$data->tariflama = $row->tariflama;
-				$data->lamadaya = $row->lamadaya;
-				$data->tarifbaru = $row->tarifbaru;
-				$data->dayabaru = $row->dayabaru;
-				$data->idpelanggan = $row->idpelanggan;
-				$data->namapelanggan = $row->namapelanggan;
-				$data->alamat = $row->alamat;
-				$data->tanggalbayarbp = $row->tanggalbayarbp;
-				$data->pengawas = $row->pengawas;
-				$data->pelaksana = $row->pelaksana;
-				$data->nospk = $row->nospk;
-				$data->jenispekerjaan = $row->jenispekerjaan;
-				$data->koorx = $row->koorx;
-				$data->koory = $row->koory;
-				$data->sla = $row->sla;
-				$data->statuspengerjaan = $row->statuspengerjaan;
-				$data->lbsman = $row->lbsman;
-				$data->lbsmot = $row->lbsmot;
-				$data->cbog = $row->cbog;
-				$data->pb = $row->pb;
-				$data->OD160 = $row->OD160;
-				$data->OD250 = $row->OD250;
-				$data->OD400 = $row->OD400;
-				$data->OD630 = $row->OD630;
-				$data->ID400 = $row->ID400;
-				$data->ID630 = $row->ID630;
-				$data->OD4 = $row->OD4;
-				$data->ID4 = $row->ID4;
-				$data->ID6 = $row->ID6;
-				$data->ID8 = $row->ID8;
-				$data->sktm300 = $row->sktm300;
-				$data->sktm240 = $row->sktm240;
-				$data->sutm = $row->sutm;
-				$data->skutm = $row->skutm;
-				$data->scoretm = $row->scoretm;
-				$data->scoretr = $row->scoretr;
-				$data->nyfgby = $row->nyfgby;
-				$data->jtr = $row->jtr;
-				$data->keterangan = $row->keterangan;
-
-				$data->save();
-			}else{
-                $data = MonitorModel::where('idpelanggan',$row->idpelanggan)->first();
-
-				$data->noagenda = $row->noagenda;
-				$data->tariflama = $row->tariflama;
-				$data->lamadaya = $row->lamadaya;
-				$data->tarifbaru = $row->tarifbaru;
-				$data->dayabaru = $row->dayabaru;
-				$data->idpelanggan = $row->idpelanggan;
-				$data->namapelanggan = $row->namapelanggan;
-				$data->alamat = $row->alamat;
-				$data->tanggalbayarbp = $row->tanggalbayarbp;
-				$data->pengawas = $row->pengawas;
-				$data->pelaksana = $row->pelaksana;
-				$data->nospk = $row->nospk;
-				$data->jenispekerjaan = $row->jenispekerjaan;
-				$data->koorx = $row->koorx;
-				$data->koory = $row->koory;
-				$data->sla = $row->sla;
-				$data->statuspengerjaan = $row->statuspengerjaan;
-				$data->lbsman = $row->lbsman;
-				$data->lbsmot = $row->lbsmot;
-				$data->cbog = $row->cbog;
-				$data->pb = $row->pb;
-				$data->OD160 = $row->OD160;
-				$data->OD250 = $row->OD250;
-				$data->OD400 = $row->OD400;
-				$data->OD630 = $row->OD630;
-				$data->ID400 = $row->ID400;
-				$data->ID630 = $row->ID630;
-				$data->OD4 = $row->OD4;
-				$data->ID4 = $row->ID4;
-				$data->ID6 = $row->ID6;
-				$data->ID8 = $row->ID8;
-				$data->sktm300 = $row->sktm300;
-				$data->sktm240 = $row->sktm240;
-				$data->sutm = $row->sutm;
-				$data->skutm = $row->skutm;
-				$data->scoretm = $row->scoretm;
-				$data->scoretr = $row->scoretr;
-				$data->nyfgby = $row->nyfgby;
-				$data->jtr = $row->jtr;
-				$data->keterangan = $row->keterangan;
-
-				$data->save();
-			}
-		}
-		
-	}
-
 	public function import()
 	{
+		$file = Input::file('file')->move(public_path('file'));
+		$check =Input::file('file')->getClientOriginalExtension();
+		
+		if($check == "xls" || $check == "xlsx" || $check == "csv"){
+			
+			\Excel::load($file, function($reader) {
 
+				// reader methods
+				$reader->noHeading();
+				$reader->toArray();
+				//dd($reader->parsed);
+				foreach ($reader->parsed as $row) {
+					//dd($row);
+					if(is_numeric($row[0])){
+						$id = MonitorModel::where('idpelanggan',[$row[6]])->first();
+
+						if($id == null){
+							$data = new MonitorModel;
+
+
+							if($row[1] !=null){$data->noagenda = $row[1];}
+							if($row[2] !=null){$data->tariflama = $row[2];}
+							if($row[3] !=null){$data->lamadaya = $row[3];}
+							if($row[4] !=null){$data->tarifbaru = $row[4];}
+							if($row[5] !=null){$data->dayabaru = $row[5];}
+							if($row[6] !=null){$data->idpelanggan = $row[6];}
+							if($row[7] !=null){$data->namapelanggan = $row[7];}
+							if($row[8] !=null){$data->alamat = $row[8];}
+							if($row[9] !=null){$data->tanggalbayarbp = $row[9];}
+							if($row[10] !=null){$data->pengawas = $row[10];}
+							if($row[11] !=null){$data->pelaksana = $row[11];}
+							if($row[12] !=null){$data->nospk = $row[12];}
+							if($row[13] !=null){$data->jenispekerjaan = $row[13];}
+							if($row[14] !=null){$data->koorx = $row[14];}
+							if($row[15] !=null){$data->koory = $row[15];}
+							if($row[16] !=null){$data->sla = $row[16];}
+							if($row[17] !=null){$data->statuspengerjaan = $row[17];}
+							if($row[18] !=null){$data->lbsman = $row[18];}
+							if($row[19] !=null){$data->lbsmot = $row[19];}
+							if($row[20] !=null){$data->cbog = $row[20];}
+							if($row[21] !=null){$data->pb = $row[21];}
+							if($row[22] !=null){$data->OD160 = $row[22];}
+							if($row[23] !=null){$data->OD250 = $row[23];}
+							if($row[24] !=null){$data->OD400 = $row[24];}
+							if($row[25] !=null){$data->OD630 = $row[25];}
+							if($row[26] !=null){$data->ID400 = $row[26];}
+							if($row[27] !=null){$data->ID630 = $row[27];}
+							if($row[28] !=null){$data->OD4 = $row[28];}
+							if($row[29] !=null){$data->ID4 = $row[29];}
+							if($row[30] !=null){$data->ID6 = $row[30];}
+							if($row[31] !=null){$data->ID8 = $row[31];}
+							if($row[32] !=null){$data->sktm300 = $row[32];}
+							if($row[33] !=null){$data->sktm240 = $row[33];}
+							if($row[34] !=null){$data->sutm = $row[34];}
+							if($row[35] !=null){$data->skutm = $row[35];}
+							if($row[36] !=null){$data->scoretm = $row[36];}
+							if($row[37] !=null){$data->scoretr = $row[37];}
+							if($row[38] !=null){$data->nyfgby = $row[38];}
+							if($row[39] !=null){$data->jtr = $row[39];}
+							if($row[40] !=null){$data->keterangan = $row[40];}
+
+							$data->save();
+						}else{
+							$data = MonitorModel::where('idpelanggan',[$row[6]])->first();
+
+							if($row[1] !=null){$data->noagenda = $row[1];}
+							if($row[2] !=null){$data->tariflama = $row[2];}
+							if($row[3] !=null){$data->lamadaya = $row[3];}
+							if($row[4] !=null){$data->tarifbaru = $row[4];}
+							if($row[5] !=null){$data->dayabaru = $row[5];}
+							if($row[6] !=null){$data->idpelanggan = $row[6];}
+							if($row[7] !=null){$data->namapelanggan = $row[7];}
+							if($row[8] !=null){$data->alamat = $row[8];}
+							if($row[9] !=null){$data->tanggalbayarbp = $row[9];}
+							if($row[10] !=null){$data->pengawas = $row[10];}
+							if($row[11] !=null){$data->pelaksana = $row[11];}
+							if($row[12] !=null){$data->nospk = $row[12];}
+							if($row[13] !=null){$data->jenispekerjaan = $row[13];}
+							if($row[14] !=null){$data->koorx = $row[14];}
+							if($row[15] !=null){$data->koory = $row[15];}
+							if($row[16] !=null){$data->sla = $row[16];}
+							if($row[17] !=null){$data->statuspengerjaan = $row[17];}
+							if($row[18] !=null){$data->lbsman = $row[18];}
+							if($row[19] !=null){$data->lbsmot = $row[19];}
+							if($row[20] !=null){$data->cbog = $row[20];}
+							if($row[21] !=null){$data->pb = $row[21];}
+							if($row[22] !=null){$data->OD160 = $row[22];}
+							if($row[23] !=null){$data->OD250 = $row[23];}
+							if($row[24] !=null){$data->OD400 = $row[24];}
+							if($row[25] !=null){$data->OD630 = $row[25];}
+							if($row[26] !=null){$data->ID400 = $row[26];}
+							if($row[27] !=null){$data->ID630 = $row[27];}
+							if($row[28] !=null){$data->OD4 = $row[28];}
+							if($row[29] !=null){$data->ID4 = $row[29];}
+							if($row[30] !=null){$data->ID6 = $row[30];}
+							if($row[31] !=null){$data->ID8 = $row[31];}
+							if($row[32] !=null){$data->sktm300 = $row[32];}
+							if($row[33] !=null){$data->sktm240 = $row[33];}
+							if($row[34] !=null){$data->sutm = $row[34];}
+							if($row[35] !=null){$data->skutm = $row[35];}
+							if($row[36] !=null){$data->scoretm = $row[36];}
+							if($row[37] !=null){$data->scoretr = $row[37];}
+							if($row[38] !=null){$data->nyfgby = $row[38];}
+							if($row[39] !=null){$data->jtr = $row[39];}
+							if($row[40] !=null){$data->keterangan = $row[40];}
+
+							$data->save();
+						}
+					}
+					
+				}
+
+			});
+			return redirect('/');
+		}
+		else{
+
+		}
 	}
 
 	public function export()
@@ -258,20 +275,70 @@ class HomeController extends Controller {
 		$excel->sheet('Sheet1', function($sheet) {
 		
 			// Sheet manipulation
-			$sheet->row(1, array('id','noagenda','tariflama','lamadaya','tarifbaru','dayabaru','idpelanggan',
-								 'namapelanggan','alamat','tanggalbayarbp','pengawas','pelaksana','nospk','jenispekerjaan',
-								 'koorx','koory','sla','statuspengerjaan','lbsman','lbsmot','cbog','pb','OD160','OD250','OD400',
-								 'OD630','ID400','ID630','OD4','ID4','ID6','ID8','sktm300','sktm240','sutm','skutm','scoretm',
-								 'scoretr','nyfgby','jtr','keterangan'));
+			$sheet->setAutoSize(false);
+			
+			$sheet->row(1, array('No','No Agenda','Tarif Lama','Lama Daya','Tarif Baru','Daya Baru','ID Pelanggan',
+								 'Nama Pelanggan','Alamat','Tanggal Bayar BP','Pengawas','Pelaksana','No SPK','Jenis Pekerjaan',
+								 'Koordinat Lokasi',null,'SLA','Status / Progress Pengerjaan','Kubikel',null,null,null,'Trafo',null,null,
+								 null,null,null,'PHBTR / Rak TR',null,null,null,'SKTM',null,'SUTM','SKUTM','S Core TM',
+								 'S Core TR','NYFGBY','JTR','Keterangan'));
+			$sheet->row(2, array(null,null,null,null,null,null,null,null,null,null,null,null,null,null,
+								 'X','Y',null,null,'LBS Man','LBS Mot','CBOG','PB','160 OD','250 OD','400 OD',
+								 '630 OD','400 ID','630 ID','4 OD','4 ID','6 ID','8 ID','3x300','3x240',null,null,'1x35',
+								 '1x240','4x95','3x70 + 50',null));
 
 			$monitor = MonitorModel::all();
 			//dd($monitor);
-			$index = 2;
+			$index = 3;
 			foreach ($monitor as $row) {
 				$sheet->row($index, $row->getAttributes());
+				$sheet->row($index, array($index-2));
 				$index = $index+1;
 			}
-			
+			$sheet->mergeCells('A1:A2');
+			$sheet->mergeCells('B1:B2');
+			$sheet->mergeCells('C1:C2');
+			$sheet->mergeCells('D1:D2');
+			$sheet->mergeCells('E1:E2');
+			$sheet->mergeCells('F1:F2');
+			$sheet->mergeCells('G1:G2');
+			$sheet->mergeCells('H1:H2');
+			$sheet->mergeCells('I1:I2');
+			$sheet->mergeCells('J1:J2');
+			$sheet->mergeCells('K1:K2');
+			$sheet->mergeCells('L1:L2');
+			$sheet->mergeCells('M1:M2');
+			$sheet->mergeCells('N1:N2');
+			$sheet->mergeCells('O1:P1');
+			$sheet->mergeCells('Q1:Q2');
+			$sheet->mergeCells('R1:R2');
+			$sheet->mergeCells('S1:V1');
+			$sheet->mergeCells('W1:AB1');
+			$sheet->mergeCells('AC1:AF1');
+			$sheet->mergeCells('AG1:AH1');
+			$sheet->mergeCells('AI1:AI2');
+			$sheet->mergeCells('AJ1:AJ2');
+			$sheet->mergeCells('AO1:AO2');
+
+			$sheet->cells('A1:AO2', function($cells) {
+
+				// manipulate the range of cells
+				$cells->setAlignment('left');
+				$cells->setVAlignment('top');
+				$cells->setBackground('#4BACC6');
+				$cells->setFontColor('#ffffff');
+				$cells->setFontSize(11);
+				$cells->setFontWeight('bold');
+				$cells->setAlignment('center');
+				$cells->setVAlignment('center');
+			});
+			$sheet->setBorder('A1:AO2', 'thin');
+			$sheet->setWidth(array(
+				'A'	=> 5,'B' => 12,'C' => 12,'D' => 12,'E' => 12,'F' => 12,'G' => 14,'H' => 20,'I' => 35,'J' => 16,'K' => 12,'L' => 11,'M' => 10,'N' => 17,'O' => 10,
+				'P' => 10,'Q' => 10,'R' => 26,'S' => 10,'T' => 10,'U' => 10,'V' => 10,'W' => 10,'X' => 10,'Y' => 10,'Z' => 10,'AA' => 10,'AB' => 10,'AC' => 10,'AD' => 10,
+				'AE' => 10,'AF' => 10,'AG' => 10,'AH' => 10,'AI' => 10,'AJ' => 10,'AK' => 10,'AL' => 10,'AM' => 10,'AN' => 10,'AO' => 30,
+			));
+
 		});
 
 		})->download('xls');
