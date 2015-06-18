@@ -1,0 +1,403 @@
+.margin-null {
+	margin: 0px !important;
+}
+.cs-birthday {
+	padding-left: 0px !important;
+	padding-right: 0px !important;
+}
+
+.form {
+	margin-bottom: 5px;
+}
+
+input[type="submit"] {
+	background-color: #2ea08f;
+	color: white;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	padding-left: 12px;
+	padding-right: 12px;
+	border: 0px;
+	border-radius: 3px;
+	margin-top: 10px;
+}
+
+.log-entry {
+	border: 2px;
+	border-color: #2ea08f;
+	border-radius: 3px;
+	margin-bottom: 10px;
+}
+
+.log-entry > .timestamp {
+	margin-right: 0px;
+	margin-left: 80%;
+}
+
+#proftop {
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+
+th{
+	text-align: center;
+}
+
+#center {
+	text-align: center;
+}
+
+hr{
+	border-top: 1px solid #dadada;
+}
+
+h1,h2,h3,h4,h5{
+	color: #2ea08f;
+	text-transform: uppercase;
+}
+
+a{
+	color: white! important;
+	text-decoration: none;
+}
+
+button < a:hover{	
+	background-color:#000;
+}
+
+#nav{
+	width:100%;
+	margin-left:0;
+	margin-right:0;
+	padding-left:0;
+	padding-right:0;
+}
+
+.navbar{
+	min-height: 60px;
+	width: 100%;
+	color: white;
+	background-color: #2ea08f !important;
+	border-radius: 0;
+	-moz-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+
+}
+
+.navbar-general{
+	min-height: 50px;
+}
+
+.navbar-logo{
+	padding: 10px;
+	padding-left:20px;
+	padding-right:20px;
+	background-color: #2ea08f;
+	position:absolute;
+	left:50%;
+	margin-left:-45px;
+	height: auto;
+	-moz-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+	-webkit-border-bottom-right-radius: 20px;
+	-webkit-border-bottom-left-radius: 20px;
+	-moz-border-radius-bottomright: 20px;
+	-moz-border-radius-bottomleft: 20px;
+	border-bottom-right-radius: 20px;
+	border-bottom-left-radius: 20px;
+	z-index:1000;
+	text-align:center;
+}
+
+.navbar-toggle:hover {
+	background-color: white !important;
+}
+
+.navbar-toggle:hover .icon-bar{
+	background-color: #2ea08f !important;
+}
+
+
+.navbar-default .navbar-toggle {
+	border-color: #FFF;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+	background-color: #FFF;
+}
+
+.navbar-logo:hover{
+	background-color: #2ea08f !important;
+}
+
+
+.navbar-default {
+  background-color: #2ea08f;
+  border-color: transparent;
+  /*border-color: #e7e7e7;*/
+}  
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+  border-color: transparent;
+}
+
+.navbar-default .navbar-nav > li > a{
+	color: white;
+}
+
+.navbar-default .navbar-nav > li > a:hover{
+	color: white;
+}
+
+
+#right2{
+		display:none;
+}
+
+@media(max-width:790px){
+	#right{
+		display:none;
+	}
+}
+
+@media(max-width:790px){
+	#right2{
+		display:block;
+	}
+}
+
+#proftop{
+	position:absolute;
+	right:0;
+	top:-250px;
+	margin-right: 1%;
+	z-index:1000;
+	background-color: #eaeaea;
+	width:250px;
+	padding: 20px;
+}
+
+@media(max-width:790px){
+	#proftop{
+		display:none;
+	}
+}
+
+
+.profile{
+	margin-top: 0;
+}
+
+#login{
+	width:100%;
+	padding-left:0;
+	padding-right:0;
+}
+
+#loginform{
+	margin-top:5%;
+}
+
+#loginform > .panel{
+	border: 0px;
+}
+
+.logininput{
+	border:1px solid #2ea08f;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+
+}
+
+@media(max-width:990px){
+	.loginformg{
+		margin:0px;
+	}
+}
+
+.btn{
+	background-color:#2ea08f !important;
+	border: 0px;
+}
+
+.buttons > div{
+	margin-bottom: 10px;
+}
+
+
+#loginbutton{
+	float:right;
+	margin-right: 0px !important;
+}
+
+.footer{
+	 background-color: #2ea08f;
+	 color:white;
+	 min-height: 70px;
+	 position:fixed;
+	 bottom: 0;
+	 width: 100%;
+	 margin: 0px;
+	 padding-top:10px;
+	 -moz-box-shadow: 4px 0 4px 4px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 4px 0 4px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 4px 0 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+.footcontent{
+	text-align:center;
+}
+
+thead{
+	background-color:#2ea08f !important;
+	color: white !important;
+}
+
+td{
+	border: 3px solid #2ea08f ;
+}
+
+td > .btn{
+	padding-top: 0px !important;
+	padding-bottom: 0px !important;
+	padding-left: 10px !important;
+	padding-right: 10px !important;
+}
+
+tr{
+	border: 3px solid #2ea08f ;
+}
+
+div.cs-select {
+	display: inline-block;
+	vertical-align: middle;
+	position: relative;
+	text-align: left;
+	background: #fff;
+	z-index: 100;
+	width: 100%;
+	max-width: 500px;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	border: 1px solid #2ea08f;
+}
+
+div.cs-select:focus {
+	outline: none; /* For better accessibility add a style for this in your skin */
+}
+
+.cs-select select {
+	display: none;
+}
+
+.cs-select span {
+	display: block;
+	position: relative;
+	cursor: pointer;
+	padding: 5px;
+	margin-left: 10px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+/* Placeholder and selected option */
+.cs-select > span {
+	padding-right: 3em;
+}
+
+.cs-select > span::after,
+.cs-select .cs-selected span::after {
+	speak: none;
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.cs-select > span::after {
+	content: '\25BE';
+	right: 1em;
+}
+
+.cs-select .cs-selected span::after {
+	content: '\2713';
+	margin-left: 1em;
+}
+
+.cs-select.cs-active > span::after {
+	-webkit-transform: translateY(-50%) rotate(180deg);
+	transform: translateY(-50%) rotate(180deg);
+}
+
+/* Options */
+.cs-select .cs-options {
+	position: absolute;
+	overflow: hidden;
+	width: 100%;
+	background: rgba(46, 160, 143, 0.8);
+	color: white;
+	visibility: hidden;
+	margin-top: -5px;
+	border: 3px solid #2ea08f;
+	border-top: 8px solid #2ea08f;
+	z-index: 2000;
+}
+
+.cs-select.cs-active .cs-options {
+	visibility: visible;
+}
+
+.cs-select ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+.cs-select ul span {
+	padding: 1em;
+}
+
+.cs-select ul li.cs-focus span {
+	background-color: #ddd;
+}
+
+/* Optgroup and optgroup label */
+.cs-select li.cs-optgroup ul {
+	padding-left: 1em;
+}
+
+.cs-select li.cs-optgroup > span {
+	cursor: default;
+}
+
+@media (max-width: 797px){
+	.filter{
+		margin-bottom: 10px;
+	}
+}
+}
+
+@media (max-width: 782px){
+	.tambah{
+		width: 70%;
+	}
+}
+}

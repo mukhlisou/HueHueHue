@@ -7,10 +7,10 @@
 3. delete
 	-delete row 								            V
 4. read
-	-satu satu(klik link ke row yg mau diliat)				X (gampang)
+	-satu satu(klik link ke row yg mau diliat)						v
 	-overall (home)								            V
-5. Login & logout							                X (OTW)
-6. register									                X (OTW)
+5. Login & logout							                v
+6. register									               v
 7. import excel                                             V
 8. export excel                                             V
 8. TAMPILAAN!!!!! (SUSAAAAHH!)							    X

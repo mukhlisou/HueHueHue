@@ -1,4 +1,6 @@
+@extends('layouts.start')
 
+@section('content')
 <div class="container-fluid">
 	<div class="row">
 		<div id = "loginform" class="col-md-8 col-md-offset-2">
@@ -46,12 +48,12 @@
 							</div>
 						</div>
 						<div class="form-group" style = "margin-top: 5px;">
-							<div class="col-md-7 col-md-offset-3" style = "padding-top: 10px; border-top: 1px solid #cacaca">
+							<div class="col-md-7 col-md-offset-3" style = "padding-top: 10px;margin-bottom: 100px; border-top: 1px solid #cacaca">
 								<button id = "loginbutton" type="submit" class="btn btn-primary" style="margin-right: 15px;">
 									Login
 								</button>
 
-								<a style = 'color: #2EA08F !important' href="{{ URL::to('forgetpassword') }}">Lupa Password Anda?</a>
+							{{--	<a style = 'color: #2EA08F !important' href="{{ URL::to('forgetpassword') }}">Lupa Password Anda?</a>--}}
 							</div>
 						</div>
 					</form>
@@ -60,3 +62,4 @@
 		</div>
 	</div>
 </div>
+@endsection

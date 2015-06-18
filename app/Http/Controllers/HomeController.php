@@ -39,6 +39,12 @@ class HomeController extends Controller {
 		return view('edit', ['row' => $row]);
 	
 	}
+    public function detail($id)
+    {
+        $row = MonitorModel::where('id','=',$id)->first();
+        return view('detail', ['row' => $row]);
+
+    }
 	public function create(){
 		return view('create');
 	}

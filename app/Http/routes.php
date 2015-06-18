@@ -23,6 +23,7 @@ Route::get('/update/{id}',['middleware' => 'auth', 'uses' =>'HomeController@upda
 Route::post('/edit/{id}',['middleware' => 'auth', 'uses' =>'HomeController@edit']);
 Route::get('/export',['middleware' => 'auth', 'uses' =>'HomeController@export']);
 Route::post('/import',['middleware' => 'auth', 'uses' =>'HomeController@import']);
+Route::get('/detail/{id}',['middleware' => 'auth', 'uses' =>'HomeController@detail']);
 
 
 /*kita bikin alur buat pindah2 halaman disini*/
