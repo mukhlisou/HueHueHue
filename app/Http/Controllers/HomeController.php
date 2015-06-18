@@ -323,8 +323,6 @@ class HomeController extends Controller {
 			$sheet->cells('A1:AO2', function($cells) {
 
 				// manipulate the range of cells
-				$cells->setAlignment('left');
-				$cells->setVAlignment('top');
 				$cells->setBackground('#4BACC6');
 				$cells->setFontColor('#ffffff');
 				$cells->setFontSize(11);
