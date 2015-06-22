@@ -14,9 +14,14 @@
                 </thead>
                     <tbody id="listing">
                     @foreach ($monitor as $field)
-                        <?php $hue = $field->id;
-                        $ur = '/detail/'.$hue;
-
+                        <?php 
+                        if(!empty($field)){
+                            $hue = $field->id;
+                            $ur = '/detail/'.$hue;
+                        }
+                        else{
+                            $ur='/';
+                        }
                         ?>
 
                     <tr class='clickableRow'>
@@ -64,10 +69,11 @@
         </div>
     </div>
 </div>
-<script>
+@if(!empty($ur))
 $(function() {
 $(".clickableRow").on("click", function() {
 location.href="{{URL::to($ur)}}";
 });
 });</script>
+@endif
 @endsection

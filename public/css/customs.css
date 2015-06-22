@@ -238,18 +238,12 @@ button a:hover{
 
 .footer{
 	 background-color: #1BA39C;
-    clear: both;
-    position: relative;
-    z-index: 10;
-    height: 3em;
-    margin-top: -3em
-	 color:white;
-	 min-height: 70px;
-	 position:relative;
-	 bottom: 0;
-	 width: 100%;
-	 margin: 0px;
-	 padding-top:10px;
+    color:white;
+    min-height: 70px;
+    position:fixed;
+    bottom: 0;
+    width: 100%;
+    margin: 0px;
 	 -moz-box-shadow: 4px 0 4px 4px rgba(0, 0, 0, 0.2);
     -webkit-box-shadow: 4px 0 4px 4px rgba(0, 0, 0, 0.2);
     box-shadow: 4px 0 4px 4px rgba(0, 0, 0, 0.2);
@@ -277,7 +271,7 @@ td > .btn{
 }
 
 tr{
-	border: 3px solid #000000 ;
+	border: 1px solid #000000 ;
 }
 
 div.cs-select {
