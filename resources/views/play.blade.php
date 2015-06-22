@@ -82,6 +82,7 @@
     </div>
 </div>
 @if(!empty($ur))
+<script >
 $(function() {
 $(".clickableRow").on("click", function() {
 location.href="{{URL::to($ur)}}";

@@ -4,7 +4,7 @@
     <div class="col-md-10">
         <div>
             <div class="col-md-12">
-                <h2>Tambah Data</h2>
+                <h2>Detail Data</h2>
             </div><?php $idpelanggan = $row->idpelanggan;
             $urls ='/edit/'.$idpelanggan ?>
             <form action="{{URL::to($urls)}}" method="post">

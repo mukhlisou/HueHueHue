@@ -273,7 +273,7 @@
                             <input name="keterangan" type="text" class="form-control form" id="keterangan"></div>
                         </div>
                         <div class="row">
-                    </div>
+                         </div>
 
                 </div>
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -283,6 +283,6 @@
                 </div>
             </form>
         </div>
-    </div>
+        </div>
 </div>
 @endsection

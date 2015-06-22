@@ -4,7 +4,7 @@
     <div class="col-md-10">
         <div>
             <div class="col-md-12">
-                <h2>Tambah Data</h2>
+                <h2>Edit Data</h2>
                 <div class="col-md-6 col-sm-6 col-xs-6">
                     @if (count($errors) > 0)
                         <div class="alert alert-danger">
