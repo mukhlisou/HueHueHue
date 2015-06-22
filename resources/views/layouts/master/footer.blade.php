@@ -5,7 +5,7 @@
         $('#datatable').DataTable( { "ordering": true, "paging":true } );
     } );
 </script>
-	<div class="footer row">
+	<div class="footer">
 		<div class="col-sm-3 footcontent">
 			<p>TENTANG KAMI</p>
 		</div>

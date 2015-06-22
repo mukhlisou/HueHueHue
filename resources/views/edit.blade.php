@@ -5,6 +5,17 @@
         <div>
             <div class="col-md-12">
                 <h2>Tambah Data</h2>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    @if (count($errors) > 0)
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                </div>
             </div><?php $idpelanggan = $row->idpelanggan;
             $urls ='/edit/'.$idpelanggan ?>
             <form action="{{URL::to($urls)}}" method="post">
@@ -259,8 +270,7 @@
                         <div class="form-group">
                             <div class="col-sm-4">
                                 <label for="keterangan">Keterangan</label></div>
-                            <div class="col-sm-8">
-                        <div class="row">
+
                         </div>
 
                     </div>
@@ -269,9 +279,9 @@
                     <div class="col-md-12 col-sm-8 add-button" style="margin-bottom: 100px;">
                         <button class="btn btn-primary btn-block" type="submit"><i class="fa fa-user-plus"></i> Simpan</button>
                     </div>
+                            </div>
             </form>
         </div>
-    </div>
     </div>
 @endsection
  

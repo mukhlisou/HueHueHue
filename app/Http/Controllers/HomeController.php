@@ -1,9 +1,11 @@
 <?php namespace App\Http\Controllers;
 
 use App\MonitorModel;
-use Http\Requests;
+
 use Request;
 use Illuminate\Support\Facades\Input;
+use Validator;
+
 
 class HomeController extends Controller {
 
@@ -51,101 +53,129 @@ class HomeController extends Controller {
 
 	public function add()
 	{
-		$data = new MonitorModel;
 
-		$data->noagenda = Input::get('noagenda');
-		$data->tariflama = Input::get('tariflama');
-		$data->lamadaya = Input::get('lamadaya');
-		$data->tarifbaru = Input::get('tarifbaru');
-		$data->dayabaru = Input::get('dayabaru');
-		$data->idpelanggan = Input::get('idpelanggan');
-		$data->namapelanggan = Input::get('namapelanggan');
-		$data->alamat = Input::get('alamat');
-		$data->tanggalbayarbp = Input::get('tanggalbayarbp');
-		$data->pengawas = Input::get('pengawas');
-		$data->pelaksana = Input::get('pelaksana');
-		$data->nospk = Input::get('nospk');
-		$data->jenispekerjaan = Input::get('jenispekerjaan');
-		$data->koorx = Input::get('koorx');
-		$data->koory = Input::get('koory');
-		$data->sla = Input::get('sla');
-		$data->statuspengerjaan = Input::get('statuspengerjaan');
-		$data->lbsman = Input::get('lbsman');
-		$data->lbsmot = Input::get('lbsmot');
-		$data->cbog = Input::get('cbog');
-		$data->pb = Input::get('pb');
-		$data->OD160 = Input::get('160OD');
-		$data->OD250 = Input::get('250OD');
-		$data->OD400 = Input::get('400OD');
-		$data->OD630 = Input::get('630OD');
-		$data->ID400 = Input::get('400ID');
-		$data->ID630 = Input::get('630ID');
-		$data->OD4 = Input::get('4OD');
-		$data->ID4 = Input::get('4ID');
-		$data->ID6= Input::get('6ID');
-		$data->ID8 = Input::get('8ID');
-		$data->sktm300 = Input::get('sktm300');
-		$data->sktm240 = Input::get('sktm240');
-		$data->sutm = Input::get('sutm');
-		$data->skutm = Input::get('skutm');
-		$data->scoretm = Input::get('scoretm');
-		$data->scoretr = Input::get('scoretr');
-		$data->nyfgby = Input::get('nyfgby');
-		$data->jtr = Input::get('jtr');
-		$data->keterangan = Input::get('keterangan');
+        $validator = Validator::make(Input::all(), [
+            'noagenda'=>'required',
+            'idpelanggan' => 'required|unique:monitor',
+            'namapelanggan' => 'required',
+        ]);
 
-		$data->save();
+        if ($validator->fails()) {
+            return redirect('create')
+                ->withErrors($validator)
+                ->withInput();
+        }else{
 
-		return redirect('/');
+            $data = new MonitorModel;
+
+            $data->noagenda = Input::get('noagenda');
+            $data->tariflama = Input::get('tariflama');
+            $data->lamadaya = Input::get('lamadaya');
+            $data->tarifbaru = Input::get('tarifbaru');
+            $data->dayabaru = Input::get('dayabaru');
+            $data->idpelanggan = Input::get('idpelanggan');
+            $data->namapelanggan = Input::get('namapelanggan');
+            $data->alamat = Input::get('alamat');
+            $data->tanggalbayarbp = Input::get('tanggalbayarbp');
+            $data->pengawas = Input::get('pengawas');
+            $data->pelaksana = Input::get('pelaksana');
+            $data->nospk = Input::get('nospk');
+            $data->jenispekerjaan = Input::get('jenispekerjaan');
+            $data->koorx = Input::get('koorx');
+            $data->koory = Input::get('koory');
+            $data->sla = Input::get('sla');
+            $data->statuspengerjaan = Input::get('statuspengerjaan');
+            $data->lbsman = Input::get('lbsman');
+            $data->lbsmot = Input::get('lbsmot');
+            $data->cbog = Input::get('cbog');
+            $data->pb = Input::get('pb');
+            $data->OD160 = Input::get('160OD');
+            $data->OD250 = Input::get('250OD');
+            $data->OD400 = Input::get('400OD');
+            $data->OD630 = Input::get('630OD');
+            $data->ID400 = Input::get('400ID');
+            $data->ID630 = Input::get('630ID');
+            $data->OD4 = Input::get('4OD');
+            $data->ID4 = Input::get('4ID');
+            $data->ID6= Input::get('6ID');
+            $data->ID8 = Input::get('8ID');
+            $data->sktm300 = Input::get('sktm300');
+            $data->sktm240 = Input::get('sktm240');
+            $data->sutm = Input::get('sutm');
+            $data->skutm = Input::get('skutm');
+            $data->scoretm = Input::get('scoretm');
+            $data->scoretr = Input::get('scoretr');
+            $data->nyfgby = Input::get('nyfgby');
+            $data->jtr = Input::get('jtr');
+            $data->keterangan = Input::get('keterangan');
+
+
+            $data->save();
+            return redirect('/');
+        }
 	}
-
+    function object_to_array($object) {
+        return (array) $object;
+    }
 	public function edit($idpelanggan)
 	{
-		$data = MonitorModel::where('idpelanggan',$idpelanggan)->first();
-		$data->noagenda = Input::get('noagenda');
-		$data->tariflama = Input::get('tariflama');
-		$data->lamadaya = Input::get('lamadaya');
-		$data->tarifbaru = Input::get('tarifbaru');
-		$data->dayabaru = Input::get('dayabaru');
-		$data->idpelanggan = Input::get('idpelanggan');
-		$data->namapelanggan = Input::get('namapelanggan');
-		$data->alamat = Input::get('alamat');
-		$data->tanggalbayarbp = Input::get('tanggalbayarbp');
-		$data->pengawas = Input::get('pengawas');
-		$data->pelaksana = Input::get('pelaksana');
-		$data->nospk = Input::get('nospk');
-		$data->jenispekerjaan = Input::get('jenispekerjaan');
-		$data->koorx = Input::get('koorx');
-		$data->koory = Input::get('koory');
-		$data->sla = Input::get('sla');
-		$data->statuspengerjaan = Input::get('statuspengerjaan');
-		$data->lbsman = Input::get('lbsman');
-		$data->lbsmot = Input::get('lbsmot');
-		$data->cbog = Input::get('cbog');
-		$data->pb = Input::get('pb');
-		$data->OD160 = Input::get('160OD');
-		$data->OD250 = Input::get('250OD');
-		$data->OD400 = Input::get('400OD');
-		$data->OD630 = Input::get('630OD');
-		$data->ID400 = Input::get('400ID');
-		$data->ID630 = Input::get('630ID');
-		$data->OD4 = Input::get('4OD');
-		$data->ID4 = Input::get('4ID');
-		$data->ID6= Input::get('6ID');
-		$data->ID8 = Input::get('8ID');
-		$data->sktm300 = Input::get('sktm300');
-		$data->sktm240 = Input::get('sktm240');
-		$data->sutm = Input::get('sutm');
-		$data->skutm = Input::get('skutm');
-		$data->scoretm = Input::get('scoretm');
-		$data->scoretr = Input::get('scoretr');
-		$data->nyfgby = Input::get('nyfgby');
-		$data->jtr = Input::get('jtr');
-		$data->keterangan = Input::get('keterangan');
+        $validator = Validator::make(Input::all(), [
+            'noagenda'=>'required',
+            'idpelanggan' => 'required',
+            'namapelanggan' => 'required',
+        ]);
 
-		$data->save();
+        if ($validator->fails()) {
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput();
+        }else {
+            $data = MonitorModel::where('idpelanggan', $idpelanggan)->first();
+            $data->noagenda = Input::get('noagenda');
+            $data->tariflama = Input::get('tariflama');
+            $data->lamadaya = Input::get('lamadaya');
+            $data->tarifbaru = Input::get('tarifbaru');
+            $data->dayabaru = Input::get('dayabaru');
+            $data->idpelanggan = Input::get('idpelanggan');
+            $data->namapelanggan = Input::get('namapelanggan');
+            $data->alamat = Input::get('alamat');
+            $data->tanggalbayarbp = Input::get('tanggalbayarbp');
+            $data->pengawas = Input::get('pengawas');
+            $data->pelaksana = Input::get('pelaksana');
+            $data->nospk = Input::get('nospk');
+            $data->jenispekerjaan = Input::get('jenispekerjaan');
+            $data->koorx = Input::get('koorx');
+            $data->koory = Input::get('koory');
+            $data->sla = Input::get('sla');
+            $data->statuspengerjaan = Input::get('statuspengerjaan');
+            $data->lbsman = Input::get('lbsman');
+            $data->lbsmot = Input::get('lbsmot');
+            $data->cbog = Input::get('cbog');
+            $data->pb = Input::get('pb');
+            $data->OD160 = Input::get('160OD');
+            $data->OD250 = Input::get('250OD');
+            $data->OD400 = Input::get('400OD');
+            $data->OD630 = Input::get('630OD');
+            $data->ID400 = Input::get('400ID');
+            $data->ID630 = Input::get('630ID');
+            $data->OD4 = Input::get('4OD');
+            $data->ID4 = Input::get('4ID');
+            $data->ID6 = Input::get('6ID');
+            $data->ID8 = Input::get('8ID');
+            $data->sktm300 = Input::get('sktm300');
+            $data->sktm240 = Input::get('sktm240');
+            $data->sutm = Input::get('sutm');
+            $data->skutm = Input::get('skutm');
+            $data->scoretm = Input::get('scoretm');
+            $data->scoretr = Input::get('scoretr');
+            $data->nyfgby = Input::get('nyfgby');
+            $data->jtr = Input::get('jtr');
+            $data->keterangan = Input::get('keterangan');
 
-		return redirect('/');
+            $data->save();
+
+            return redirect('/');
+        }
 	}
 
 	public function import()

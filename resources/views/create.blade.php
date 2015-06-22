@@ -6,6 +6,17 @@
             <div class="col-md-12">
                 <h2>Tambah Data</h2>
             </div>
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                @if (count($errors) > 0)
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+            </div>
             <form action="{{URL::to('/create/add')}}" method="post">
                 <div class="col-md-12">
 

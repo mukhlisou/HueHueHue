@@ -52,7 +52,7 @@
 		{{ Form::submit('Import') }}
 
 		{{ Form::close() }}-->
-        </div><div class ="col-sm-6" style="margin-bottom: 100px;>
+        </div><div class ="col-sm-6" style="margin-bottom: 100px;">
 
                 <?php $url = '/create'; ?>
                 <a class="btn" href="{{URL::to($url)}}">Tambah Baru</a>
@@ -68,8 +68,6 @@
 $(function() {
 $(".clickableRow").on("click", function() {
 location.href="{{URL::to($ur)}}";
-
 });
-
 });</script>
 @endsection
