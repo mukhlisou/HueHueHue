@@ -198,6 +198,13 @@ class HomeController extends Controller {
 
 	public function import()
 	{
+		$validator = Validator::make(Input::all(), ['file' => 'required',], ['file.required' => 'file can not be empty.',]);
+		if ($validator->fails()) {
+				return redirect()->back()
+				->withErrors($validator)
+				->withInput();
+		}
+
 		$file = Input::file('file')->move(public_path('file'));
 		$check =Input::file('file')->getClientOriginalExtension();
 		
