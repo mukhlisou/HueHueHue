@@ -44,8 +44,8 @@
         </div>
         <hr>
         <div class="row">
-            <div class ="col-sm-5">
-            <form method="POST" action="http://localhost/HueHueHue/public/import" accept-charset="UTF-8" enctype="multipart/form-data">
+            <div class ="col-sm-5"><?php $urls ='/import' ?>
+            <form method="POST" action="{{URL::to($urls)}}" accept-charset="UTF-8" enctype="multipart/form-data">
             <input type="hidden" name="_token" value="{{ csrf_token() }}"><label for="file" id="" class="">File</label> <input name="file" type="file" id="file">
             <input type="submit" value="Import"> </form>
         <!-- {{ Form::open(array('url'=>'/import','files'=>true)) }}
