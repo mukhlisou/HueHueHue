@@ -138,133 +138,133 @@
                             <div class="col-sm-4">
                             <label for="lbsman">LBS Man</label></div>
                             <div class="col-sm-8">
-                            <input name="lbsman" type="text" class="form-control form" id="lbsman"></div>
+                            <input name="lbsman" type="number" class="form-control form" id="lbsman"></div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                             <label for="lbsmot">LBS Mot</label></div>
                             <div class="col-sm-8">
-                            <input name="lbsmot" type="text" class="form-control form" id="lbsmot"></div>
+                            <input name="lbsmot" type="number" class="form-control form" id="lbsmot"></div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                             <label for="cbog">CBOG</label></div>
                             <div class="col-sm-8">
-                            <input name="cbog" type="text" class="form-control form" id="cbog"></div>
+                            <input name="cbog" type="number" class="form-control form" id="cbog"></div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                             <label for="pb">PB</label></div>
                             <div class="col-sm-8">
-                            <input name="pb" type="text" class="form-control form" id="pb"></div>
+                            <input name="pb" type="number" class="form-control form" id="pb"></div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                             <label for="160OD">160 OD</label></div>
                             <div class="col-sm-8">
-                            <input name="160OD" type="text" class="form-control form" id="160OD"></div>
+                            <input name="160OD" type="number" class="form-control form" id="160OD"></div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                             <label for="250OD">250 OD</label></div>
                             <div class="col-sm-8">
-                            <input name="250OD" type="text" class="form-control form" id="250OD"></div>
+                            <input name="250OD" type="number" class="form-control form" id="250OD"></div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                             <label for="400OD">400 OD</label></div>
                             <div class="col-sm-8">
-                            <input name="400OD" type="text" class="form-control form" id="400OD"></div>
+                            <input name="400OD" type="number" class="form-control form" id="400OD"></div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                             <label for="630OD">630 OD</label></div>
                             <div class="col-sm-8">
-                            <input name="630OD" type="text" class="form-control form" id="630OD"></div>
+                            <input name="630OD" type="number" class="form-control form" id="630OD"></div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                             <label for="400ID">400 ID</label></div>
                             <div class="col-sm-8">
-                            <input name="400ID" type="text" class="form-control form" id="400ID"></div>
+                            <input name="400ID" type="number" class="form-control form" id="400ID"></div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                             <label for="630ID">630 ID</label></div>
                             <div class="col-sm-8">
-                            <input name="630ID" type="text" class="form-control form" id="630ID"></div>
+                            <input name="630ID" type="number" class="form-control form" id="630ID"></div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                             <label for="4OD">4 OD</label></div>
                             <div class="col-sm-8">
-                            <input name="4OD" type="text" class="form-control form" id="4OD"></div>
+                            <input name="4OD" type="number" class="form-control form" id="4OD"></div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                             <label for="4ID">4 ID</label></div>
                             <div class="col-sm-8">
-                            <input name="4ID" type="text" class="form-control form" id="4ID"></div>
+                            <input name="4ID" type="number" class="form-control form" id="4ID"></div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                             <label for="6ID">6 ID</label></div>
                             <div class="col-sm-8">
-                            <input name="6ID" type="text" class="form-control form" id="6ID"></div>
+                            <input name="6ID" type="number" class="form-control form" id="6ID"></div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                             <label for="8ID">8 ID</label></div>
                             <div class="col-sm-8">
-                            <input name="8ID" type="text" class="form-control form" id="8ID"></div>
+                            <input name="8ID" type="number" class="form-control form" id="8ID"></div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                             <label for="sktm300">SKTM 3x300</label></div>
                             <div class="col-sm-8">
-                            <input name="sktm300" type="text" class="form-control form" id="sktm300"></div>
+                            <input name="sktm300" type="number" class="form-control form" id="sktm300"></div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                             <label for="sktm240">SKTM 3x240</label></div>
                             <div class="col-sm-8">
-                            <input name="sktm240" type="text" class="form-control form" id="sktm240"></div>
+                            <input name="sktm240" type="number" class="form-control form" id="sktm240"></div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                             <label for="sutm">SUTM</label></div>
                             <div class="col-sm-8">
-                            <input name="sutm" type="text" class="form-control form" id="sutm"></div>
+                            <input name="sutm" type="number" class="form-control form" id="sutm"></div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                             <label for="skutm">SKUTM</label></div>
                             <div class="col-sm-8">
-                            <input name="skutm" type="text" class="form-control form" id="skutm"></div>
+                            <input name="skutm" type="number" class="form-control form" id="skutm"></div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                             <label for="scoretm">S Core TM</label></div>
                             <div class="col-sm-8">
-                            <input name="scoretm" type="text" class="form-control form" id="scoretm"></div>
+                            <input name="scoretm" type="number" class="form-control form" id="scoretm"></div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                             <label for="scoretr">S Core TR</label></div>
                             <div class="col-sm-8">
-                            <input name="scoretr" type="text" class="form-control form" id="scoretr"></div>
+                            <input name="scoretr" type="number" class="form-control form" id="scoretr"></div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                             <label for="nyfgby">NYFGBY</label></div>
                             <div class="col-sm-8">
-                            <input name="nyfgby" type="text" class="form-control form" id="nyfgby"></div>
+                            <input name="nyfgby" type="number" class="form-control form" id="nyfgby"></div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                             <label for="jtr">JTR</label></div>
                             <div class="col-sm-8">
-                            <input name="jtr" type="text" class="form-control form" id="jtr"></div>
+                            <input name="jtr" type="number" class="form-control form" id="jtr"></div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
