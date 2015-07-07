@@ -256,7 +256,8 @@ button a:hover{
 
 thead{
 	background-color:#1BA39C !important;
-	color: white !important;
+    border: 1px solid black;
+	color: black !important;
 }
 
 td{
