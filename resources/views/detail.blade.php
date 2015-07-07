@@ -150,6 +150,10 @@
                             <div class="col-sm-8">
                                 <p>: {{$row->pb}}</p></div>
                         </div>
+
+
+                        </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6">
                         <div class="form-group">
                             <div class="col-sm-4">
                                 <label for="160OD">160 OD</label></div>
@@ -301,10 +305,8 @@
         google.maps.event.addDomListener(window, 'load', initialize);
         </script>
 
-        <div id="map-canvas" style="width:500px;height:380px;"></div>
-        <p>{{$row->koorx}}</p>
-        <p>a</p>
-        <p>b</p>
+        <div id="map-canvas" style="margin-bottom: 100px;width:1024px;height:600px;"></div>
+
     </div>
 
 
