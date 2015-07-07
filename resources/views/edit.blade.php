@@ -139,138 +139,139 @@
                             <div class="col-sm-4">
                                 <label for="lbsman">LBS Man</label></div>
                             <div class="col-sm-8">
-                                <input name="lbsman" type="text" class="form-control form" id="lbsman" value="{{$row->lbsman}}"></div>
+                                <input name="lbsman" type="number" class="form-control form" id="lbsman" value="{{$row->lbsman}}"></div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                                 <label for="lbsmot">LBS Mot</label></div>
                             <div class="col-sm-8">
-                                <input name="lbsmot" type="text" class="form-control form" id="lbsmot" value="{{$row->lbsmot}}"></div>
+                                <input name="lbsmot" type="number" class="form-control form" id="lbsmot" value="{{$row->lbsmot}}"></div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                                 <label for="cbog">CBOG</label></div>
                             <div class="col-sm-8">
-                                <input name="cbog" type="text" class="form-control form" id="cbog" value="{{$row->cbog}}"></div>
+                                <input name="cbog" type="number" class="form-control form" id="cbog" value="{{$row->cbog}}"></div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                                 <label for="pb">PB</label></div>
                             <div class="col-sm-8">
-                                <input name="pb" type="text" class="form-control form" id="pb" value="{{$row->pb}}"></div>
+                                <input name="pb" type="number" class="form-control form" id="pb" value="{{$row->pb}}"></div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                                 <label for="160OD">160 OD</label></div>
                             <div class="col-sm-8">
-                                <input name="160OD" type="text" class="form-control form" id="160OD" value="{{$row->OD160}}"></div>
+                                <input name="160OD" type="number" class="form-control form" id="160OD" value="{{$row->OD160}}"></div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                                 <label for="250OD">250 OD</label></div>
                             <div class="col-sm-8">
-                                <input name="250OD" type="text" class="form-control form" id="250OD" value="{{$row->OD250}}"></div>
+                                <input name="250OD" type="number" class="form-control form" id="250OD" value="{{$row->OD250}}"></div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                                 <label for="400OD">400 OD</label></div>
                             <div class="col-sm-8">
-                                <input name="400OD" type="text" class="form-control form" id="400OD" value="{{$row->OD400}}"></div>
+                                <input name="400OD" type="number" class="form-control form" id="400OD" value="{{$row->OD400}}"></div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                                 <label for="630OD">630 OD</label></div>
                             <div class="col-sm-8">
-                                <input name="630OD" type="text" class="form-control form" id="630OD" value="{{$row->OD630}}"></div>
+                                <input name="630OD" type="number" class="form-control form" id="630OD" value="{{$row->OD630}}"></div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                                 <label for="400ID">400 ID</label></div>
                             <div class="col-sm-8">
-                                <input name="400ID" type="text" class="form-control form" id="400ID" value="{{$row->ID400}}"></div>
+                                <input name="400ID" type="number" class="form-control form" id="400ID" value="{{$row->ID400}}"></div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                                 <label for="630ID">630 ID</label></div>
                             <div class="col-sm-8">
-                                <input name="630ID" type="text" class="form-control form" id="630ID" value="{{$row->ID630}}"></div>
+                                <input name="630ID" type="number" class="form-control form" id="630ID" value="{{$row->ID630}}"></div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                                 <label for="4OD">4 OD</label></div>
                             <div class="col-sm-8">
-                                <input name="4OD" type="text" class="form-control form" id="4OD" value="{{$row->OD4}}"></div>
+                                <input name="4OD" type="number" class="form-control form" id="4OD" value="{{$row->OD4}}"></div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                                 <label for="4ID">4 ID</label></div>
                             <div class="col-sm-8">
-                                <input name="4ID" type="text" class="form-control form" id="4ID" value="{{$row->ID4}}"></div>
+                                <input name="4ID" type="number" class="form-control form" id="4ID" value="{{$row->ID4}}"></div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                                 <label for="6ID">6 ID</label></div>
                             <div class="col-sm-8">
-                                <input name="6ID" type="text" class="form-control form" id="6ID" value="{{$row->ID6}}"></div>
+                                <input name="6ID" type="number" class="form-control form" id="6ID" value="{{$row->ID6}}"></div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                                 <label for="8ID">8 ID</label></div>
                             <div class="col-sm-8">
-                                <input name="8ID" type="text" class="form-control form" id="8ID" value="{{$row->ID8}}"></div>
+                                <input name="8ID" type="number" class="form-control form" id="8ID" value="{{$row->ID8}}"></div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                                 <label for="sktm300">SKTM 3x300</label></div>
                             <div class="col-sm-8">
-                                <input name="sktm300" type="text" class="form-control form" id="sktm300" value="{{$row->sktm300}}"></div>
+                                <input name="sktm300" type="number" class="form-control form" id="sktm300" value="{{$row->sktm300}}"></div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                                 <label for="sktm240">SKTM 3x240</label></div>
                             <div class="col-sm-8">
-                                <input name="sktm240" type="text" class="form-control form" id="sktm240" value="{{$row->sktm240}}"></div>
+                                <input name="sktm240" type="number" class="form-control form" id="sktm240" value="{{$row->sktm240}}"></div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                                 <label for="sutm">SUTM</label></div>
                             <div class="col-sm-8">
-                                <input name="sutm" type="text" class="form-control form" id="sutm" value="{{$row->sutm}}"></div>
+                                <input name="sutm" type="number" class="form-control form" id="sutm" value="{{$row->sutm}}"></div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                                 <label for="skutm">SKUTM</label></div>
                             <div class="col-sm-8">
-                                <input name="skutm" type="text" class="form-control form" id="skutm" value="{{$row->skutm}}"></div>
+                                <input name="skutm" type="number" class="form-control form" id="skutm" value="{{$row->skutm}}"></div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                                 <label for="scoretm">S Core TM</label></div>
                             <div class="col-sm-8">
-                                <input name="scoretm" type="text" class="form-control form" id="scoretm" value="{{$row->scoretm}}"></div>
+                                <input name="scoretm" type="number" class="form-control form" id="scoretm" value="{{$row->scoretm}}"></div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                                 <label for="scoretr">S Core TR</label></div>
                             <div class="col-sm-8">
-                                <input name="scoretr" type="text" class="form-control form" id="scoretr" value="{{$row->scoretr}}"></div>
+                                <input name="scoretr" type="number" class="form-control form" id="scoretr" value="{{$row->scoretr}}"></div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                                 <label for="nyfgby">NYFGBY</label></div>
                             <div class="col-sm-8">
-                                <input name="nyfgby" type="text" class="form-control form" id="nyfgby" value="{{$row->nyfgby}}"></div>
+                                <input name="nyfgby" type="number" class="form-control form" id="nyfgby" value="{{$row->nyfgby}}"></div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                                 <label for="jtr">JTR</label></div>
                             <div class="col-sm-8">
-                                <input name="jtr" type="text" class="form-control form" id="jtr" value="{{$row->jtr}}"></div>
+                                <input name="jtr" type="number" class="form-control form" id="jtr" value="{{$row->jtr}}"></div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                                 <label for="keterangan">Keterangan</label></div>
-
+                            <div class="col-sm-8">
+                                <input name="keterangan" type="text" class="form-control form" id="keterangan" value="{{$row->keterangan}}"></div>
                         </div>
 
                     </div>

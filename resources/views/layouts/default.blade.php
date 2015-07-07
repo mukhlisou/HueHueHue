@@ -5,5 +5,9 @@
 @include('layouts.master.navbar')
 
 @yield('content')
-
-@include('layouts.master.footer')
+<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready( function () {
+        $('#datatable').DataTable( { "ordering": true, "paging":false } );
+    } );
+</script>
