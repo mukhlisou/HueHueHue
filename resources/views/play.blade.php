@@ -24,7 +24,7 @@
                         }
                         ?>
 
-                    <tr class='clickableRow'>
+                    <tr class='clickableRow' id="row{{$field->id}}">
                         <td> {{ $field->idpelanggan }} </td>
                         <td id="center"> {{ $field->namapelanggan}} </td>
                         <td>
@@ -83,9 +83,14 @@
 </div>
 @if(!empty($ur))
 <script >
+
+
 $(function() {
 $(".clickableRow").on("click", function() {
-location.href="{{URL::to($ur)}}";
+    var id = $(this).attr("id");
+    id = id.substring(3);
+
+location.href="{{URL('/detail')}}/"+id;
 });
 });</script>
 @endif

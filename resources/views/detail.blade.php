@@ -104,13 +104,13 @@
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
-                                <label for="koorx">Koordiat X</label></div>
+                                <label for="koorx">Koordinat X</label></div>
                             <div class="col-sm-8">
-                                <p>: {{$row->noagenda}}</p>koorx</div>
+                                <p>: {{$row->koorx}}</p></div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
-                                <label for="koory">Koordiat Y</label></div>
+                                <label for="koory">Koordinat Y</label></div>
                             <div class="col-sm-8">
                                 <p>: {{$row->koory}}</p></div>
                         </div>
@@ -269,7 +269,42 @@
                     </div>
             </form>
         </div>
+        <style>
+          #map-canvas {
+            width: 500px;
+            height: 400px;
+          }
+        </style>
+        <script src="https://maps.googleapis.com/maps/api/js"></script>
+       
+        <script>
+        var myCenter=new google.maps.LatLng(<?php echo $row->koorx; ?>, <?php echo $row->koory; ?>);
+        var marker;
 
+        function initialize()
+        {
+        var mapProp = {
+          center:myCenter,
+          zoom:16,
+          mapTypeId:google.maps.MapTypeId.ROADMAP
+          };
+
+        var map=new google.maps.Map(document.getElementById("map-canvas"),mapProp);
+
+        var marker=new google.maps.Marker({
+          position:myCenter,
+          });
+
+        marker.setMap(map);
+        }
+
+        google.maps.event.addDomListener(window, 'load', initialize);
+        </script>
+
+        <div id="map-canvas" style="width:500px;height:380px;"></div>
+        <p>{{$row->koorx}}</p>
+        <p>a</p>
+        <p>b</p>
     </div>
 
 
