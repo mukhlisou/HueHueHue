@@ -280,26 +280,35 @@
           }
         </style>
         <script src="https://maps.googleapis.com/maps/api/js"></script>
-       
         <script>
-        var myCenter=new google.maps.LatLng(<?php echo $row->koorx; ?>, <?php echo $row->koory; ?>);
+        var myCenter = new google.maps.LatLng(<?php echo $row->koorx; ?>, <?php echo $row->koory; ?>);
+        var myZoom = 16;
         var marker;
+
+        var x = <?php echo $row->koorx; ?>;
+        var y = <?php echo $row->koory; ?>;
+        if(x=="0" || y=="0"){
+            myCenter = new google.maps.LatLng(6.1735, 106.8772);
+            myZoom = 4;
+            document.write('<div>koordinat tidak ditemukan</div>');
+        }
 
         function initialize()
         {
-        var mapProp = {
-          center:myCenter,
-          zoom:16,
-          mapTypeId:google.maps.MapTypeId.ROADMAP
-          };
+            var mapProp = {
+              center:myCenter,
+              zoom:myZoom,
+              mapTypeId:google.maps.MapTypeId.ROADMAP
+              };
+            var map=new google.maps.Map(document.getElementById("map-canvas"),mapProp);
 
-        var map=new google.maps.Map(document.getElementById("map-canvas"),mapProp);
-
-        var marker=new google.maps.Marker({
-          position:myCenter,
-          });
-
-        marker.setMap(map);
+            var marker=new google.maps.Marker({
+              position:myCenter,
+              });
+            if(x=="0" || y=="0"){
+            }else{
+                marker.setMap(map);
+            }
         }
 
         google.maps.event.addDomListener(window, 'load', initialize);
