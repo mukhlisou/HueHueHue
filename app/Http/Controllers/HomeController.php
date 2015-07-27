@@ -58,6 +58,7 @@ class HomeController extends Controller {
 			'noagenda'=>'required|integer',
 			'idpelanggan' => 'required|integer',
 	        'namapelanggan' => 'required',
+	        'sla'=>'required',
 		];
 
 		$messages = [
@@ -66,6 +67,8 @@ class HomeController extends Controller {
 			'idpelanggan.required' => 'ID pelanggan is required',
 			'idpelanggan.integer' => 'ID pelanggan must be numbers.',
 			'namapelanggan.required' => 'Nama pelanggan is required',
+			'sla.required' => 'SLA is required',
+
 		];
         $validator = Validator::make(Input::all(), $rules, $messages);
 

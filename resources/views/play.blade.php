@@ -1,8 +1,7 @@
 @extends('layouts.default')
 
 @section('content')
-<div class="container">
-    <div class="row" style="margin-top:20px; padding-bottom: 60px;margin-bottom: 100px;">
+    <div class="row" style="margin-top:20px; padding-left:60px; padding-right:60px;">
         <div class="table-responsive">
             <table id="datatable" border="1">
                 <thead>
@@ -161,8 +160,9 @@
                 </table>
         </div>
 
-        <hr>
-        <div class="row">
+    </div>
+        <div style="padding-left:60px;padding-right:60px;"><hr>
+        <div class="row" style="padding-left:60px;padding-right:60px;">
             <div class ="col-sm-5"><?php $urls ='/import' ?>
             <form method="POST" action="{{URL::to($urls)}}" accept-charset="UTF-8" enctype="multipart/form-data">
             <input type="hidden" name="_token" value="{{ csrf_token() }}"><label for="file" id="" class="">File</label> <input name="file" type="file" id="file">
@@ -176,9 +176,9 @@
 		{{ Form::submit('Import') }}
 
 		{{ Form::close() }}-->
-        </div><div class ="col-sm-6" style="margin-bottom: 100px;">
+        </div><div class ="col-sm-6" style="margin-bottom: 100px; padding-left:60px;">
 
-                <?php $url = '/create'; echo $lbsman; ?>
+                <?php $url = '/create'; ?>
                 <a class="btn" href="{{URL::to($url)}}">Tambah Baru</a>
 
                 <?php $urlex = '/export'; ?>
@@ -186,7 +186,7 @@
 
             </div>
         </div>
-        <div class="col-md-6 col-sm-6 col-xs-6">
+        <div style="padding-left:60px;padding-right:60px;" class="col-md-6 col-sm-6 col-xs-6">
             @if (count($errors) > 0)
                 <div class="alert alert-danger">
                     Something wrong with your file
@@ -198,8 +198,6 @@
                 </div>
             @endif
         </div>
-    </div>
-</div>
 @if(!empty($field))
 <script >
 
