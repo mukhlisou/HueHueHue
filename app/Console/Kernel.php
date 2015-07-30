@@ -29,11 +29,6 @@ class Kernel extends ConsoleKernel
     {
         $schedule->call(function()
         {
-            Mail::raw('peringatan: waktu pembayaran telah lewat', function($message)
-            {
-                $message->to('b3r5erk3r@yahoo.com')->subject('peringatan pembayaran');;
-            });
-
             $today = (new DateTime('today'))->format('Y-m-d');
             $monitor = MonitorModel::all();
             // Send some e-mail
