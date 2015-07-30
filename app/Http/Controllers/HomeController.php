@@ -5,6 +5,7 @@ use App\MonitorModel;
 use Request;
 use Illuminate\Support\Facades\Input;
 use Validator;
+use Mail;
 
 
 class HomeController extends Controller {
@@ -22,9 +23,7 @@ class HomeController extends Controller {
 	public function index()
 	{
 		$monitor = MonitorModel::all();
-
-        return view('play', ['monitor' => $monitor]);
-	
+        return view('play', ['monitor' => $monitor]);	
 	}
 
 	public function delete($id)
@@ -315,10 +314,10 @@ class HomeController extends Controller {
 	public function export()
 	{
 		
-		\Excel::create('TestFile', function($excel) {
+		\Excel::create('Data Monitoring Pelayanan Penyambungan', function($excel) {
 
 		// Set the title
-		$excel->setTitle('TestTitle');
+		$excel->setTitle('');
 
 		$excel->sheet('Sheet1', function($sheet) {
 		

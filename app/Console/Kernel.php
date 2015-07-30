@@ -5,6 +5,9 @@ namespace App\Console;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
+use App\MonitorModel;
+use Mail;
+
 class Kernel extends ConsoleKernel
 {
     /**
@@ -24,7 +27,48 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('inspire')
-                 ->hourly();
+        $schedule->call(function()
+        {
+            Mail::raw('peringatan: waktu pembayaran telah lewat', function($message)
+            {
+                $message->to('b3r5erk3r@yahoo.com')->subject('peringatan pembayaran');;
+            });
+
+            $today = (new DateTime('today'))->format('Y-m-d');
+            $monitor = MonitorModel::all();
+            // Send some e-mail
+            foreach($monitor as $field){
+                if($field->sla == 5){
+                    if(($today->modify('-2 day')).equals($field->tanggalbayarbp)){
+                        Mail::raw('peringatan: sisa waktu pembayaran tinggal dua hari lagi', function($message)
+                        {
+                            $message->to('b3r5erk3r@yahoo.com')->subject('peringatan pembayaran');;
+                        });
+                    }
+                }else if($field->sla == 15){
+                    if(($today->modify('-9 day')).equals($field->tanggalbayarbp)){
+                        Mail::raw('peringatan: waktu pembayaran telah lewat', function($message)
+                        {
+                            $message->to('b3r5erk3r@yahoo.com')->subject('peringatan pembayaran');;
+                        });
+                    }
+                }else if($field->sla == 40){
+                    if(($today->modify('-29 day')).equals($field->tanggalbayarbp)){
+                        Mail::raw('peringatan: waktu pembayaran telah lewat', function($message)
+                        {
+                            $message->to('b3r5erk3r@yahoo.com')->subject('peringatan pembayaran');;
+                        });
+                    }
+                }else if($field->sla == 75){
+                    if(($today->modify('-64 day')).equals($field->tanggalbayarbp)){
+                        Mail::raw('peringatan: waktu pembayaran telah lewat', function($message)
+                        {
+                            $message->to('b3r5erk3r@yahoo.com')->subject('peringatan pembayaran');;
+                        });
+                    }
+                }
+            }
+
+        })->dailyAt('21:55');
     }
 }

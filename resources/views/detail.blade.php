@@ -76,7 +76,7 @@
                             <div class="col-sm-4">
                                 <label for="tanggalbayarbp">Tanggal Bayar BP</label></div>
                             <div class="col-sm-8">
-                                <p>: {{$row->tanggalbayar}}</p></div>
+                                <p>: {{$row->tanggalbayarbp}}</p></div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
