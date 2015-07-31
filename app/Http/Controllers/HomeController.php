@@ -6,6 +6,7 @@ use Request;
 use Illuminate\Support\Facades\Input;
 use Validator;
 use Mail;
+use DateTime;
 
 
 class HomeController extends Controller {
@@ -35,13 +36,13 @@ class HomeController extends Controller {
 	
 	}
 		public function update($id)
-	{
+	{         
 		$row = MonitorModel::where('id','=',$id)->first();
 		return view('edit', ['row' => $row]);
 	
 	}
     public function detail($id)
-    {
+    {       
         $row = MonitorModel::where('id','=',$id)->first();
         return view('detail', ['row' => $row]);
 
