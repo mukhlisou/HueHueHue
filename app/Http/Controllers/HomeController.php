@@ -229,6 +229,7 @@ class HomeController extends Controller {
 							'1'=>'required|integer',
 							'6' => 'required|integer',
 				            '7' => 'required',
+							'16'=>'required|in:5,15,40,75',
 						];
 
 						$messages = [
@@ -237,6 +238,8 @@ class HomeController extends Controller {
 							'6.required' => 'ID pelanggan is required',
 							'6.integer' => 'ID pelanggan must be numbers.',
 							'7.required' => 'Nama pelanggan is required',
+							'16.required' => 'SLA is required',
+							'16.in' => 'The :attribute must be one of the following types: :5, 15, 40, 75',
 						];
 		
 						$validator = Validator::make($row->all(), $rules, $messages);
