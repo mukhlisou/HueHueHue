@@ -220,34 +220,36 @@ class HomeController extends Controller {
 				$reader->toArray();
 				//dd($reader->parsed);
 				$input = array();
+                $errors = array();
 
+                $rowIndex = 1;
 				foreach ($reader->parsed as $row) {
 					//dd($row);
 					if(is_numeric($row[0])){
 
-						$rules = [
-							'1'=>'required|integer',
-							'6' => 'required|integer',
-				            '7' => 'required',
-							'16'=>'required|in:5,15,40,75',
-						];
+                        $rules = [
+                            '1'=>'required|integer',
+                            '6' => 'required|integer',
+                            '7' => 'required',
+                            '16'=>'required|in:5,15,40,75',
+                        ];
 
-						$messages = [
-							'1.required' => 'No. agenda is required.',
-							'1.integer' => 'No. agenda must be numbers.',
-							'6.required' => 'ID pelanggan is required',
-							'6.integer' => 'ID pelanggan must be numbers.',
-							'7.required' => 'Nama pelanggan is required',
-							'16.required' => 'SLA is required',
-							'16.in' => 'The :attribute must be one of the following types: :5, 15, 40, 75',
-						];
+                        $messages = [
+                            '1.required' => 'at line '.$rowIndex.': No. agenda is required.',
+                            '1.integer' => 'at line '.$rowIndex.': No. agenda must be numbers.',
+                            '6.required' => 'at line '.$rowIndex.': ID pelanggan is required',
+                            '6.integer' => 'at line '.$rowIndex.': ID pelanggan must be numbers.',
+                            '7.required' => 'at line '.$rowIndex.': Nama pelanggan is required',
+                            '16.required' => 'at line '.$rowIndex.': SLA is required',
+                            '16.in' => '@line '.$rowIndex.': SLA must be one of the following types: 5, 15, 40, 75',
+                        ];
 		
 						$validator = Validator::make($row->all(), $rules, $messages);
 
-						if ($validator->fails()) {
-								return redirect()->back()
-								->withErrors($validator)
-								->withInput();
+						if ($validator->fails()) {	
+                            foreach ($validator->errors()->all() as $message) {
+                                array_push($errors,$message);
+                            }
 						}else{
 							$id = MonitorModel::where('idpelanggan',[$row[6]])->first();
 							if($id == null){
@@ -298,14 +300,21 @@ class HomeController extends Controller {
 							if($row[40] !=null){$data->keterangan = $row[40];}
 
 							array_push($input,$data);
-						}
-						
+						}						
 					}
+                    $rowIndex = $rowIndex + 1;
 					
 				}
-				foreach($input as $in){
-					$in->save();
-				}
+                if(count($errors) == 0){
+                    foreach($input as $in){
+                        $in->save();
+                    }
+                }
+				else{
+                    return redirect()->back()
+                                ->withErrors($errors)
+                                ->withInput();
+                }
 
 			});
 			return redirect('/');

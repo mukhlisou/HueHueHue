@@ -7,6 +7,7 @@ use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
 use App\MonitorModel;
 use Mail;
+use DateTime;
 
 class Kernel extends ConsoleKernel
 {
@@ -30,32 +31,32 @@ class Kernel extends ConsoleKernel
         $schedule->call(function()
         {
             $monitor = MonitorModel::all();
-        // Send some e-mail
-        foreach($monitor as $field){
-            if($field->sla == 5 && $field->tanggalbayarbp == ((new DateTime('today'))->modify('-2 day')->format('Y-m-d'))){
-                Mail::raw('SLA 5 overdue', function($message)
-                {
-                    $message->to('b3r5erk3r@yahoo.com')->subject('peringatan pembayaran');;
-                });
-                
-            }else if($field->sla == 15 && $field->tanggalbayarbp == ((new DateTime('today'))->modify('-9 day')->format('Y-m-d'))){
-                Mail::raw('SLA 15 overdue', function($message)
-                {
-                    $message->to('b3r5erk3r@yahoo.com')->subject('peringatan pembayaran');;
-                });
-            }else if($field->sla == 40 && $field->tanggalbayarbp == ((new DateTime('today'))->modify('-29 day')->format('Y-m-d'))){
-                Mail::raw('SLA 40 overdue', function($message)
-                {
-                    $message->to('b3r5erk3r@yahoo.com')->subject('peringatan pembayaran');;
-                });
-            }else if($field->sla == 75 && $field->tanggalbayarbp == ((new DateTime('today'))->modify('-64 day')->format('Y-m-d'))){
-                Mail::raw('SLA 75 overdue', function($message)
-                {
-                    $message->to('b3r5erk3r@yahoo.com')->subject('peringatan pembayaran');;
-                });
+            // Send some e-mail
+            foreach($monitor as $field){
+                if($field->sla == 5 && $field->tanggalbayarbp == ((new DateTime('today'))->modify('-2 day')->format('Y-m-d'))){
+                    Mail::raw('SLA 5 overdue', function($message)
+                    {
+                        $message->to('b3r5erk3r@yahoo.com')->subject('peringatan pembayaran');;
+                    });
+                    
+                }else if($field->sla == 15 && $field->tanggalbayarbp == ((new DateTime('today'))->modify('-9 day')->format('Y-m-d'))){
+                    Mail::raw('SLA 15 overdue', function($message)
+                    {
+                        $message->to('b3r5erk3r@yahoo.com')->subject('peringatan pembayaran');;
+                    });
+                }else if($field->sla == 40 && $field->tanggalbayarbp == ((new DateTime('today'))->modify('-29 day')->format('Y-m-d'))){
+                    Mail::raw('SLA 40 overdue', function($message)
+                    {
+                        $message->to('b3r5erk3r@yahoo.com')->subject('peringatan pembayaran');;
+                    });
+                }else if($field->sla == 75 && $field->tanggalbayarbp == ((new DateTime('today'))->modify('-64 day')->format('Y-m-d'))){
+                    Mail::raw('SLA 75 overdue', function($message)
+                    {
+                        $message->to('b3r5erk3r@yahoo.com')->subject('peringatan pembayaran');;
+                    });
+                }
             }
-        }
 
-        })->dailyAt('21:55');
+        })->daily();
     }
 }
