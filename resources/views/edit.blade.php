@@ -128,7 +128,7 @@
                                 <label for="sla">SLA</label></div>
                             <div class="col-sm-8">
                             <select class="form-control form" id="sla" name="sla">
-                                <option value="" selected="selected">{{$row->sla}} Hari</option>
+                                <option value="{{$row->sla}}" selected="selected">{{$row->sla}} Hari</option>
                                     <option value="5">5 Hari</option>
                                     <option value="15">15 Hari</option>
                                     <option value="40">40 Hari</option>
