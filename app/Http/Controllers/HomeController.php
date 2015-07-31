@@ -56,7 +56,7 @@ class HomeController extends Controller {
 
         $rules = [
 			'noagenda'=>'required|integer',
-			'idpelanggan' => 'required|integer',
+			'idpelanggan' => 'required|integer|unique:monitor',
 	        'namapelanggan' => 'required',
 	        'sla'=>'required',
 		];
@@ -64,6 +64,7 @@ class HomeController extends Controller {
 		$messages = [
 			'noagenda.required' => 'No. agenda is required.',
 			'noagenda.integer' => 'No. agenda must be numbers.',
+			'idpelanggan.unique' => 'ID Pelanggan sudah terdaftar.',
 			'idpelanggan.required' => 'ID pelanggan is required',
 			'idpelanggan.integer' => 'ID pelanggan must be numbers.',
 			'namapelanggan.required' => 'Nama pelanggan is required',
@@ -133,13 +134,14 @@ class HomeController extends Controller {
 	{
 		$rules = [
 			'noagenda'=>'required|integer',
-			'idpelanggan' => 'required|integer',
+			'idpelanggan' => 'required|integer|unique:monitor',
 	        'namapelanggan' => 'required',
 		];
 
 		$messages = [
 			'noagenda.required' => 'No. agenda is required.',
 			'noagenda.integer' => 'No. agenda must be numbers.',
+			'idpelanggan.unique' => 'ID Pelanggan sudah terdaftar.',
 			'idpelanggan.required' => 'ID pelanggan is required',
 			'idpelanggan.integer' => 'ID pelanggan must be numbers.',
 			'namapelanggan.required' => 'Nama pelanggan is required',
@@ -229,7 +231,7 @@ class HomeController extends Controller {
 
                         $rules = [
                             '1'=>'required|integer',
-                            '6' => 'required|integer',
+                            '6' => 'required|integer|unique:monitor',
                             '7' => 'required',
                             '16'=>'required|in:5,15,40,75',
                         ];
@@ -237,6 +239,7 @@ class HomeController extends Controller {
                         $messages = [
                             '1.required' => 'at line '.$rowIndex.': No. agenda is required.',
                             '1.integer' => 'at line '.$rowIndex.': No. agenda must be numbers.',
+							'6.unique' => 'at line '.$rowIndex.': ID Pelanggan sudah terdaftar.',
                             '6.required' => 'at line '.$rowIndex.': ID pelanggan is required',
                             '6.integer' => 'at line '.$rowIndex.': ID pelanggan must be numbers.',
                             '7.required' => 'at line '.$rowIndex.': Nama pelanggan is required',
