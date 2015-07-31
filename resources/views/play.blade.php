@@ -3,7 +3,7 @@
 @section('content')
     <div class="row" style="margin-top:20px; padding-left:60px; padding-right:60px;">
         <div class="table-responsive">
-            <table id="datatable" border="1">
+            <table id="datatable" border="1" cellspacing="0" width="100%">
                 <thead>
                   <tr>
                       <th>Management Data</th>
@@ -24,7 +24,7 @@
                       <th>Koordinat Y</th>
                       <th>SLA</th>
                       <th>Status Pekerjaan</th>
-                      <th>Kubikel<br>LBS Man</th>
+                      <th>Kubikel LBS Man</th>
                       <th>Kubikel<br>LBS Mot</th>
                       <th>Kubikel<br>CBOG</th>
                       <th>Kubikel<br>PB</th>
@@ -101,7 +101,7 @@
                         <td id="center"> {{ $field->jenispekerjaan }} </td>
                         <td id="center"> {{ $field->koorx }} </td>
                         <td id="center"> {{ $field->koory }} </td>
-                        <td id="center"> {{ $field->sla }} </td>
+                        <td id="center"> {{ $field->sla }} Hari</td>
                         <td id="center"> {{ $field->statuspengerjaan }} </td>
                         <td id="center"> {{ $field->lbsman }} </td>
                         <td id="center"> {{ $field->lbsmot }} </td>
@@ -214,4 +214,6 @@ $(".clickableRow").on("click", function() {
 });
 });</script>
 @endif
+
 @endsection
+
