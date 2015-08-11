@@ -54,7 +54,7 @@ return [
     |
     */
 
-    'from' => ['address' => 'vesperia.id@gmail.com', 'name' => 'Vesperia Global Merdeka'],
+    'from' => ['address' => 'mail@vesperia.id', 'name' => 'Vesperia Global Merdeka'],
 
     /*
     |--------------------------------------------------------------------------
