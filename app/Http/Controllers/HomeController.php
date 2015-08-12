@@ -134,16 +134,12 @@ class HomeController extends Controller {
 	{
 		$rules = [
 			'noagenda'=>'required|integer',
-			'idpelanggan' => 'required|integer|unique:monitor',
 	        'namapelanggan' => 'required',
 		];
 
 		$messages = [
 			'noagenda.required' => 'No. agenda is required.',
 			'noagenda.integer' => 'No. agenda must be numbers.',
-			'idpelanggan.unique' => 'ID Pelanggan sudah terdaftar.',
-			'idpelanggan.required' => 'ID pelanggan is required',
-			'idpelanggan.integer' => 'ID pelanggan must be numbers.',
 			'namapelanggan.required' => 'Nama pelanggan is required',
 		];
         $validator = Validator::make(Input::all(), $rules, $messages);

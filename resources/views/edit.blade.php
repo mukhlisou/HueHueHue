@@ -67,7 +67,7 @@
                             <div class="col-sm-4">
                                 <label for="idpelanggan">ID Pelanggan</label></div>
                             <div class="col-sm-8">
-                                <input name="idpelanggan" type="text" class="form-control form" id="idpelanggan" value="{{$row->idpelanggan}}"></div>
+                                <input name="idpelanggan" type="text" class="form-control form" id="idpelanggan" value="{{$row->idpelanggan}}" disabled></div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
