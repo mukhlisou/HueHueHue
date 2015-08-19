@@ -120,7 +120,107 @@ class HomeController extends Controller {
             $data->scoretr = Input::get('scoretr');
             $data->nyfgby = Input::get('nyfgby');
             $data->jtr = Input::get('jtr');
-            $data->keterangan = Input::get('keterangan');
+			$data->keterangan = Input::get('keterangan');
+			if(Input::get('s1')!= null){
+				$data->s1 = Input::get('s1');
+			}else{
+				$data->s1 ='off' ;
+			}
+			if(Input::get('s2')!= null){
+				$data->s2 = Input::get('s2');
+			}else{
+				$data->s2 ='off' ;
+			}
+			if(Input::get('s3')!= null){
+				$data->s3 = Input::get('s3');
+			}else{
+				$data->s3 ='off' ;
+			}
+			if(Input::get('s4')!= null){
+				$data->s4 = Input::get('s4');
+			}else{
+				$data->s4 ='off' ;
+			}
+			if(Input::get('s5')!= null){
+				$data->s5 = Input::get('s5');
+			}else{
+				$data->s5 ='off' ;
+			}
+			if(Input::get('s6')!= null){
+				$data->s6 = Input::get('s6');
+			}else{
+				$data->s6 ='off' ;
+			}
+			if(Input::get('s7')!= null){
+				$data->s7= Input::get('s7');
+			}else{
+				$data->s7 ='off' ;
+			}
+			if(Input::get('s8')!= null){
+				$data->s8 = Input::get('s8');
+			}else{
+				$data->s8 ='off' ;
+			}
+			if(Input::get('s9')!= null){
+				$data->s9 = Input::get('s9');
+			}else{
+				$data->s9 ='off' ;
+			}
+			if(Input::get('s10')!= null){
+				$data->s10 = Input::get('s10');
+			}else{
+				$data->s10 ='off' ;
+			}
+			if(Input::get('s11')!= null){
+				$data->s11 = Input::get('s11');
+			}else{
+				$data->s11 ='off' ;
+			}
+			if(Input::get('s12')!= null){
+				$data->s12 = Input::get('s12');
+			}else{
+				$data->s12 ='off' ;
+			}if(Input::get('s13')!= null){
+				$data->s13 = Input::get('s13');
+			}else{
+				$data->s13 ='off' ;
+			}if(Input::get('s14')!= null){
+				$data->s14 = Input::get('s14');
+			}else{
+				$data->s14 ='off' ;
+			}if(Input::get('s15')!= null){
+				$data->s15 = Input::get('s15');
+			}else{
+				$data->s15 ='off' ;
+			}if(Input::get('s16')!= null){
+				$data->s16 = Input::get('s16');
+			}else{
+				$data->s16 ='off' ;
+			}if(Input::get('s17')!= null){
+				$data->s17 = Input::get('s17');
+			}else{
+				$data->s17 ='off' ;
+			}if(Input::get('s18')!= null){
+				$data->s18 = Input::get('s18');
+			}else{
+				$data->s18 ='off' ;
+			}if(Input::get('s19')!= null){
+				$data->s19 = Input::get('s19');
+			}else{
+				$data->s19 ='off' ;
+			}if(Input::get('s20')!= null){
+				$data->s20 = Input::get('s20');
+			}else{
+				$data->s20 ='off' ;
+			}if(Input::get('s21')!= null){
+				$data->s21 = Input::get('s21');
+			}else{
+				$data->s21 ='off' ;
+			}if(Input::get('s22')!= null){
+				$data->s22 = Input::get('s22');
+			}else{
+				$data->s22 ='off' ;
+			}
 
 
             $data->save();
@@ -190,6 +290,106 @@ class HomeController extends Controller {
             $data->nyfgby = Input::get('nyfgby');
             $data->jtr = Input::get('jtr');
             $data->keterangan = Input::get('keterangan');
+			if(Input::get('s1')!= null){
+				$data->s1 = Input::get('s1');
+			}else{
+				$data->s1 ='off' ;
+			}
+			if(Input::get('s2')!= null){
+				$data->s2 = Input::get('s2');
+			}else{
+				$data->s2 ='off' ;
+			}
+			if(Input::get('s3')!= null){
+				$data->s3 = Input::get('s3');
+			}else{
+				$data->s3 ='off' ;
+			}
+			if(Input::get('s4')!= null){
+				$data->s4 = Input::get('s4');
+			}else{
+				$data->s4 ='off' ;
+			}
+			if(Input::get('s5')!= null){
+				$data->s5 = Input::get('s5');
+			}else{
+				$data->s5 ='off' ;
+			}
+			if(Input::get('s6')!= null){
+				$data->s6 = Input::get('s6');
+			}else{
+				$data->s6 ='off' ;
+			}
+			if(Input::get('s7')!= null){
+				$data->s7= Input::get('s7');
+			}else{
+				$data->s7 ='off' ;
+			}
+			if(Input::get('s8')!= null){
+				$data->s8 = Input::get('s8');
+			}else{
+				$data->s8 ='off' ;
+			}
+			if(Input::get('s9')!= null){
+				$data->s9 = Input::get('s9');
+			}else{
+				$data->s9 ='off' ;
+			}
+			if(Input::get('s10')!= null){
+				$data->s10 = Input::get('s10');
+			}else{
+				$data->s10 ='off' ;
+			}
+			if(Input::get('s11')!= null){
+				$data->s11 = Input::get('s11');
+			}else{
+				$data->s11 ='off' ;
+			}
+			if(Input::get('s12')!= null){
+				$data->s12 = Input::get('s12');
+			}else{
+				$data->s12 ='off' ;
+			}if(Input::get('s13')!= null){
+				$data->s13 = Input::get('s13');
+			}else{
+				$data->s13 ='off' ;
+			}if(Input::get('s14')!= null){
+				$data->s14 = Input::get('s14');
+			}else{
+				$data->s14 ='off' ;
+			}if(Input::get('s15')!= null){
+				$data->s15 = Input::get('s15');
+			}else{
+				$data->s15 ='off' ;
+			}if(Input::get('s16')!= null){
+				$data->s16 = Input::get('s16');
+			}else{
+				$data->s16 ='off' ;
+			}if(Input::get('s17')!= null){
+				$data->s17 = Input::get('s17');
+			}else{
+				$data->s17 ='off' ;
+			}if(Input::get('s18')!= null){
+				$data->s18 = Input::get('s18');
+			}else{
+				$data->s18 ='off' ;
+			}if(Input::get('s19')!= null){
+				$data->s19 = Input::get('s19');
+			}else{
+				$data->s19 ='off' ;
+			}if(Input::get('s20')!= null){
+				$data->s20 = Input::get('s20');
+			}else{
+				$data->s20 ='off' ;
+			}if(Input::get('s21')!= null){
+				$data->s21 = Input::get('s21');
+			}else{
+				$data->s21 ='off' ;
+			}if(Input::get('s22')!= null){
+				$data->s22 = Input::get('s22');
+			}else{
+				$data->s22 ='off' ;
+			}
 
             $data->save();
 
@@ -226,21 +426,10 @@ class HomeController extends Controller {
 					if(is_numeric($row[0])){
 
                         $rules = [
-                            '1'=>'required|integer',
-                            '6' => 'required|integer|unique:monitor',
-                            '7' => 'required',
-                            '16'=>'required|in:5,15,40,75',
+
                         ];
 
                         $messages = [
-                            '1.required' => 'at line '.$rowIndex.': No. agenda is required.',
-                            '1.integer' => 'at line '.$rowIndex.': No. agenda must be numbers.',
-							'6.unique' => 'at line '.$rowIndex.': ID Pelanggan sudah terdaftar.',
-                            '6.required' => 'at line '.$rowIndex.': ID pelanggan is required',
-                            '6.integer' => 'at line '.$rowIndex.': ID pelanggan must be numbers.',
-                            '7.required' => 'at line '.$rowIndex.': Nama pelanggan is required',
-                            '16.required' => 'at line '.$rowIndex.': SLA is required',
-                            '16.in' => '@line '.$rowIndex.': SLA must be one of the following types: 5, 15, 40, 75',
                         ];
 		
 						$validator = Validator::make($row->all(), $rules, $messages);
@@ -257,46 +446,126 @@ class HomeController extends Controller {
 								$data = MonitorModel::where('idpelanggan',[$row[6]])->first();
 							}
 
-							if($row[1] !=null){$data->noagenda = $row[1];}
-							if($row[2] !=null){$data->tariflama = $row[2];}
-							if($row[3] !=null){$data->lamadaya = $row[3];}
-							if($row[4] !=null){$data->tarifbaru = $row[4];}
-							if($row[5] !=null){$data->dayabaru = $row[5];}
-							if($row[6] !=null){$data->idpelanggan = $row[6];}
-							if($row[7] !=null){$data->namapelanggan = $row[7];}
-							if($row[8] !=null){$data->alamat = $row[8];}
-							if($row[9] !=null){$data->tanggalbayarbp = $row[9];}
-							if($row[10] !=null){$data->pengawas = $row[10];}
-							if($row[11] !=null){$data->pelaksana = $row[11];}
-							if($row[12] !=null){$data->nospk = $row[12];}
-							if($row[13] !=null){$data->jenispekerjaan = $row[13];}
-							if($row[14] !=null){$data->koorx = $row[14];}
-							if($row[15] !=null){$data->koory = $row[15];}
-							if($row[16] !=null){$data->sla = $row[16];}
-							if($row[17] !=null){$data->statuspengerjaan = $row[17];}
-							if($row[18] !=null){$data->lbsman = $row[18];}
-							if($row[19] !=null){$data->lbsmot = $row[19];}
-							if($row[20] !=null){$data->cbog = $row[20];}
-							if($row[21] !=null){$data->pb = $row[21];}
-							if($row[22] !=null){$data->OD160 = $row[22];}
-							if($row[23] !=null){$data->OD250 = $row[23];}
-							if($row[24] !=null){$data->OD400 = $row[24];}
-							if($row[25] !=null){$data->OD630 = $row[25];}
-							if($row[26] !=null){$data->ID400 = $row[26];}
-							if($row[27] !=null){$data->ID630 = $row[27];}
-							if($row[28] !=null){$data->OD4 = $row[28];}
-							if($row[29] !=null){$data->ID4 = $row[29];}
-							if($row[30] !=null){$data->ID6 = $row[30];}
-							if($row[31] !=null){$data->ID8 = $row[31];}
-							if($row[32] !=null){$data->sktm300 = $row[32];}
-							if($row[33] !=null){$data->sktm240 = $row[33];}
-							if($row[34] !=null){$data->sutm = $row[34];}
-							if($row[35] !=null){$data->skutm = $row[35];}
-							if($row[36] !=null){$data->scoretm = $row[36];}
-							if($row[37] !=null){$data->scoretr = $row[37];}
-							if($row[38] !=null){$data->nyfgby = $row[38];}
-							if($row[39] !=null){$data->jtr = $row[39];}
-							if($row[40] !=null){$data->keterangan = $row[40];}
+							if($row[1] !=null){$data->noagenda = $row[1];}else{
+								$data->noagenda = '';
+							}
+							if($row[2] !=null){$data->tariflama = $row[2];}else{
+								$data->noagenda = '';
+							}
+							if($row[3] !=null){$data->lamadaya = $row[3];}else{
+								$data->noagenda = '';
+							}
+							if($row[4] !=null){$data->tarifbaru = $row[4];}else{
+								$data->noagenda = '';
+							}
+							if($row[5] !=null){$data->dayabaru = $row[5];}else{
+								$data->noagenda = '';
+							}
+							if($row[6] !=null){$data->idpelanggan = $row[6];}else{
+								$data->noagenda = '';
+							}
+							if($row[7] !=null){$data->namapelanggan = $row[7];}else{
+								$data->noagenda = '';
+							}
+							if($row[8] !=null){$data->alamat = $row[8];}else{
+								$data->noagenda = '';
+							}
+							if($row[9] !=null){$data->tanggalbayarbp = $row[9];}else{
+								$data->noagenda = '';
+							}
+							if($row[10] !=null){$data->pengawas = $row[10];}else{
+								$data->noagenda = '';
+							}
+							if($row[11] !=null){$data->pelaksana = $row[11];}else{
+								$data->noagenda = '';
+							}
+							if($row[12] !=null){$data->nospk = $row[12];}else{
+								$data->noagenda = '';
+							}
+							if($row[13] !=null){$data->jenispekerjaan = $row[13];}else{
+								$data->noagenda = '';
+							}
+							if($row[14] !=null){$data->koorx = $row[14];}else{
+								$data->noagenda = 0;
+							}
+							if($row[15] !=null){$data->koory = $row[15];}else{
+								$data->noagenda = 0;
+							}
+							if($row[16] !=null){$data->sla = $row[16];}else{
+								$data->noagenda = '';
+							}
+							if($row[17] !=null){$data->statuspengerjaan = $row[17];}else{
+								$data->noagenda = '';
+							}
+							if($row[18] !=null){$data->lbsman = $row[18];}else{
+								$data->noagenda = 0;
+							}
+							if($row[19] !=null){$data->lbsmot = $row[19];}else{
+								$data->noagenda = 0;
+							}
+							if($row[20] !=null){$data->cbog = $row[20];}else{
+								$data->noagenda = 0;
+							}
+							if($row[21] !=null){$data->pb = $row[21];}else{
+								$data->noagenda = 0;
+							}
+							if($row[22] !=null){$data->OD160 = $row[22];}else{
+								$data->noagenda = 0;
+							}
+							if($row[23] !=null){$data->OD250 = $row[23];}else{
+								$data->noagenda = 0;
+							}
+							if($row[24] !=null){$data->OD400 = $row[24];}else{
+								$data->noagenda = 0;
+							}
+							if($row[25] !=null){$data->OD630 = $row[25];}else{
+								$data->noagenda = 0;
+							}
+							if($row[26] !=null){$data->ID400 = $row[26];}else{
+								$data->noagenda = 0;
+							}
+							if($row[27] !=null){$data->ID630 = $row[27];}else{
+								$data->noagenda = 0;
+							}
+							if($row[28] !=null){$data->OD4 = $row[28];}else{
+								$data->noagenda = 0;
+							}
+							if($row[29] !=null){$data->ID4 = $row[29];}else{
+								$data->noagenda = 0;
+							}
+							if($row[30] !=null){$data->ID6 = $row[30];}else{
+								$data->noagenda = 0;
+							}
+							if($row[31] !=null){$data->ID8 = $row[31];}else{
+								$data->noagenda = 0;
+							}
+							if($row[32] !=null){$data->sktm300 = $row[32];}else{
+								$data->noagenda = 0;
+							}
+							if($row[33] !=null){$data->sktm240 = $row[33];}else{
+								$data->noagenda = 0;
+						}
+							if($row[34] !=null){$data->sutm = $row[34];}else{
+								$data->noagenda = 0;
+							}
+							if($row[35] !=null){$data->skutm = $row[35];}else{
+								$data->noagenda = 0;
+							}
+							if($row[36] !=null){$data->scoretm = $row[36];}else{
+								$data->noagenda = 0;
+							}
+							if($row[37] !=null){$data->scoretr = $row[37];}else{
+								$data->noagenda = 0;
+							}
+							if($row[38] !=null){$data->nyfgby = $row[38];}else{
+								$data->noagenda = 0;
+							}
+							if($row[39] !=null){$data->jtr = $row[39];}else{
+								$data->noagenda = 0;
+							}
+							if($row[40] !=null){$data->keterangan = $row[40];}else{
+								$data->noagenda = '';
+							}
 
 							array_push($input,$data);
 						}						

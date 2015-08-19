@@ -16,16 +16,15 @@
                 $(nRow).children().each(function(index, td) {
 
                         for (var i = 18; i < 40; i++) {
-
                             if(aData[1]==""){
                                 $(td).css("background-color", "#ffff00");
                             }
                             else if (index == i) {
 
                                 if (aData[i] == "0") {
-                                    $(td).css("background-color", "#06B33A");
+                                   // $(td).css("background-color", "#06B33A");
                                 } else {
-                                    $(td).css("background-color", "#FF3229");
+                                   // $(td).css("background-color", "#FF3229");
                                 }
                             }
                         }
