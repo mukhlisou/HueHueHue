@@ -4,6 +4,8 @@ use App\MonitorModel;
 
 use Request;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\File;
 use Validator;
 use Mail;
 use DateTime;
@@ -33,20 +35,72 @@ class HomeController extends Controller {
 		$row->delete();
 		$monitor = MonitorModel::all();
 		return redirect()->back();
-	
 	}
-		public function update($id)
+
+	public function update($id)
 	{         
 		$row = MonitorModel::where('id','=',$id)->first();
 		return view('edit', ['row' => $row]);
-	
 	}
+
     public function detail($id)
     {       
         $row = MonitorModel::where('id','=',$id)->first();
         return view('detail', ['row' => $row]);
-
     }
+
+    public function mailconfig()
+    {
+        $array = Config::get('mail');
+
+        return view('mailconfig', ['row' => $array]);
+    }
+
+    public function editmail()
+    {
+
+        $validator = Validator::make(Input::all(), ['MAIL_PASSWORD'=>'required'], ['MAIL_PASSWORD.required'=>'password required']);
+
+        if ($validator->fails()) {
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput();
+        }  
+
+        $driver = Input::get('MAIL_DRIVER');
+        $host = Input::get('MAIL_HOST');
+        $port = Input::get('MAIL_PORT');
+        $address = Input::get('MAIL_ADDRESS');
+        $password = Input::get('MAIL_PASSWORD');
+        $encryption = Input::get('MAIL_ENCRYPTION');
+        $name = Input::get('MAIL_NAME');
+        $to = Input::get('MAIL_TO');
+
+        $array = Config::get('mail');
+
+        $array['driver'] = $driver;
+        $array['host'] = $host;
+        $array['port'] = $port;
+        $array['from']['address'] = $address;
+        $array['from']['name'] = $name;
+        $array['to'] = $to;
+        $array['encryption'] = $encryption;
+        $array['username'] = $address;
+        $array['password'] = $password;
+
+        $data = var_export($array, 1);
+        if(File::put(base_path() . '\config\mail.php', "<?php\n return $data ;")) 
+        {
+            return $this->mailconfig();
+        }
+        else
+        {
+            return redirect()->back()
+                ->withErrors(["something happened"])
+                ->withInput();
+        }
+    }
+
 	public function create(){
 		return view('create');
 	}

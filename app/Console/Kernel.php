@@ -4,8 +4,10 @@ namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use Illuminate\Support\Facades\Config;
 
 use App\MonitorModel;
+use App\MailServiceModel;
 use Mail;
 use DateTime;
 
@@ -36,27 +38,27 @@ class Kernel extends ConsoleKernel
                 if($field->sla == 5 && $field->tanggalbayarbp == ((new DateTime('today'))->modify('-2 day')->format('Y-m-d'))){
                     Mail::raw('SLA 5 overdue', function($message)
                     {
-                        $message->to('vincendadiaz7@gmail.com')->subject('peringatan pembayaran');;
+                        $message->to(Config::get('mail.to'))->subject('peringatan pembayaran');;
                     });
                     
                 }else if($field->sla == 15 && $field->tanggalbayarbp == ((new DateTime('today'))->modify('-9 day')->format('Y-m-d'))){
                     Mail::raw('SLA 15 overdue', function($message)
                     {
-                        $message->to('vincendadiaz7@gmail.com')->subject('peringatan pembayaran');;
+                        $message->to(Config::get('mail.to'))->subject('peringatan pembayaran');;
                     });
                 }else if($field->sla == 40 && $field->tanggalbayarbp == ((new DateTime('today'))->modify('-29 day')->format('Y-m-d'))){
                     Mail::raw('SLA 40 overdue', function($message)
                     {
-                        $message->to('vincendadiaz7@gmail.com')->subject('peringatan pembayaran');;
+                        $message->to(Config::get('mail.to'))->subject('peringatan pembayaran');;
                     });
                 }else if($field->sla == 75 && $field->tanggalbayarbp == ((new DateTime('today'))->modify('-64 day')->format('Y-m-d'))){
                     Mail::raw('SLA 75 overdue', function($message)
                     {
-                        $message->to('vincendadiaz7@gmail.com')->subject('peringatan pembayaran');;
+                        $message->to(Config::get('mail.to'))->subject('peringatan pembayaran');;
                     });
                 }
             }
 
-        })->dailyAt('09:00');
+        })->everyMinute();
     }
 }

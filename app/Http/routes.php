@@ -24,6 +24,8 @@ Route::post('/edit/{id}',['middleware' => 'auth', 'uses' =>'HomeController@edit'
 Route::get('/export',['middleware' => 'auth', 'uses' =>'HomeController@export']);
 Route::post('/import',['middleware' => 'auth', 'uses' =>'HomeController@import']);
 Route::get('/detail/{id}',['middleware' => 'auth', 'uses' =>'HomeController@detail']);
+Route::get('/mailconfig',['middleware' => 'auth', 'uses' =>'HomeController@mailconfig']);
+Route::post('/mailconfig/edit',['middleware' => 'auth', 'uses' =>'HomeController@editmail']);
 
 
 /*kita bikin alur buat pindah2 halaman disini*/
