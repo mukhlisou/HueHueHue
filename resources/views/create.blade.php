@@ -32,6 +32,7 @@
                             </select>
                         </div> -->
 
+
                         <div class="form-group">
                             <div class="col-sm-4">
                             <label for="noagenda">No Agenda</label></div>
@@ -84,7 +85,7 @@
                             <div class="col-sm-4">
                             <label for="tanggalbayarbp">Tanggal Bayar BP</label></div>
                             <div class="col-sm-8">
-                            <input name="tanggalbayarbp" type="text" class="form-control form" id="tanggalbayarbp"></div>
+                            <input name="tanggalbayarbp" type="date" class="form-control form" id="tanggalbayarbp"></div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
@@ -144,140 +145,252 @@
                         <div class="form-group">
                             <div class="col-sm-4">
                             <label for="lbsman">LBS Man</label></div>
-                            <div class="col-sm-8">
+                            <div class="col-sm-6">
                             <input name="lbsman" type="number" class="form-control form" id="lbsman" value="0"></div>
+
+                            <div class="col-sm-2">
+                            <label>
+                                <input name="s1" type="checkbox"> Sudah terpenuhi
+                            </label>
+                                </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                             <label for="lbsmot">LBS Mot</label></div>
-                            <div class="col-sm-8">
+                            <div class="col-sm-6">
                             <input name="lbsmot" type="number" class="form-control form" id="lbsmot" value="0"></div>
+                            <div class="col-sm-2">
+                                <label>
+                                    <input name="s2" type="checkbox"> Sudah terpenuhi
+                                </label>
+                            </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                             <label for="cbog">CBOG</label></div>
-                            <div class="col-sm-8">
+                            <div class="col-sm-6">
                             <input name="cbog" type="number" class="form-control form" id="cbog" value="0"></div>
+                            <div class="col-sm-2">
+                                <label>
+                                    <input name="s3" type="checkbox"> Sudah terpenuhi
+                                </label>
+                            </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                             <label for="pb">PB</label></div>
-                            <div class="col-sm-8">
+                            <div class="col-sm-6">
                             <input name="pb" type="number" class="form-control form" id="pb" value="0"></div>
+                            <div class="col-sm-2">
+                                <label>
+                                    <input name="s4" type="checkbox"> Sudah terpenuhi
+                                </label>
+                            </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                             <label for="160OD">160 OD</label></div>
-                            <div class="col-sm-8">
+                            <div class="col-sm-6">
                             <input name="160OD" type="number" class="form-control form" id="160OD" value="0"></div>
+                            <div class="col-sm-2">
+                                <label>
+                                    <input name="s5" type="checkbox"> Sudah terpenuhi
+                                </label>
+                            </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                             <label for="250OD">250 OD</label></div>
-                            <div class="col-sm-8">
+                            <div class="col-sm-6">
                             <input name="250OD" type="number" class="form-control form" id="250OD" value="0"></div>
+                            <div class="col-sm-2">
+                                <label>
+                                    <input name="s6" type="checkbox"> Sudah terpenuhi
+                                </label>
+                            </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                             <label for="400OD">400 OD</label></div>
-                            <div class="col-sm-8">
+                            <div class="col-sm-6">
                             <input name="400OD" type="number" class="form-control form" id="400OD" value="0"></div>
+                            <div class="col-sm-2">
+                                <label>
+                                    <input name="s7" type="checkbox"> Sudah terpenuhi
+                                </label>
+                            </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                             <label for="630OD">630 OD</label></div>
-                            <div class="col-sm-8">
+                            <div class="col-sm-6">
                             <input name="630OD" type="number" class="form-control form" id="630OD" value="0"></div>
+                            <div class="col-sm-2">
+                                <label>
+                                    <input name="s8" type="checkbox"> Sudah terpenuhi
+                                </label>
+                            </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                             <label for="400ID">400 ID</label></div>
-                            <div class="col-sm-8">
+                            <div class="col-sm-6">
                             <input name="400ID" type="number" class="form-control form" id="400ID" value="0"></div>
+                            <div class="col-sm-2">
+                                <label>
+                                    <input name="s9" type="checkbox"> Sudah terpenuhi
+                                </label>
+                            </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                             <label for="630ID">630 ID</label></div>
-                            <div class="col-sm-8">
+                            <div class="col-sm-6">
                             <input name="630ID" type="number" class="form-control form" id="630ID" value="0"></div>
+                            <div class="col-sm-2">
+                                <label>
+                                    <input name="s10" type="checkbox"> Sudah terpenuhi
+                                </label>
+                            </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                             <label for="4OD">4 OD</label></div>
-                            <div class="col-sm-8">
+                            <div class="col-sm-6">
                             <input name="4OD" type="number" class="form-control form" id="4OD" value="0"></div>
+                            <div class="col-sm-2">
+                                <label>
+                                    <input name="s11" type="checkbox"> Sudah terpenuhi
+                                </label>
+                            </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                             <label for="4ID">4 ID</label></div>
-                            <div class="col-sm-8">
+                            <div class="col-sm-6">
                             <input name="4ID" type="number" class="form-control form" id="4ID" value="0"></div>
+                            <div class="col-sm-2">
+                                <label>
+                                    <input name="s12" type="checkbox"> Sudah terpenuhi
+                                </label>
+                            </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                             <label for="6ID">6 ID</label></div>
-                            <div class="col-sm-8">
+                            <div class="col-sm-6">
                             <input name="6ID" type="number" class="form-control form" id="6ID" value="0"></div>
+                            <div class="col-sm-2">
+                                <label>
+                                    <input name="s13" type="checkbox"> Sudah terpenuhi
+                                </label>
+                            </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                             <label for="8ID">8 ID</label></div>
-                            <div class="col-sm-8">
+                            <div class="col-sm-6">
                             <input name="8ID" type="number" class="form-control form" id="8ID" value="0"></div>
+                            <div class="col-sm-2">
+                                <label>
+                                    <input name="s14" type="checkbox"> Sudah terpenuhi
+                                </label>
+                            </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                             <label for="sktm300">SKTM 3x300</label></div>
-                            <div class="col-sm-8">
+                            <div class="col-sm-6">
                             <input name="sktm300" type="number" class="form-control form" id="sktm300" value="0"></div>
+                            <div class="col-sm-2">
+                                <label>
+                                    <input name="s15" type="checkbox"> Sudah terpenuhi
+                                </label>
+                            </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                             <label for="sktm240">SKTM 3x240</label></div>
-                            <div class="col-sm-8">
+                            <div class="col-sm-6">
                             <input name="sktm240" type="number" class="form-control form" id="sktm240" value="0"></div>
+                            <div class="col-sm-2">
+                                <label>
+                                    <input name="s16" type="checkbox"> Sudah terpenuhi
+                                </label>
+                            </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                             <label for="sutm">SUTM</label></div>
-                            <div class="col-sm-8">
+                            <div class="col-sm-6">
                             <input name="sutm" type="number" class="form-control form" id="sutm" value="0"></div>
+                            <div class="col-sm-2">
+                                <label>
+                                    <input name="s17" type="checkbox"> Sudah terpenuhi
+                                </label>
+                            </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                             <label for="skutm">SKUTM</label></div>
-                            <div class="col-sm-8">
+                            <div class="col-sm-6">
                             <input name="skutm" type="number" class="form-control form" id="skutm" value="0"></div>
+                            <div class="col-sm-2">
+                                <label>
+                                    <input name="s18" type="checkbox"> Sudah terpenuhi
+                                </label>
+                            </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                             <label for="scoretm">S Core TM</label></div>
-                            <div class="col-sm-8">
+                            <div class="col-sm-6">
                             <input name="scoretm" type="number" class="form-control form" id="scoretm" value="0"></div>
+                            <div class="col-sm-2">
+                                <label>
+                                    <input name="s19" type="checkbox"> Sudah terpenuhi
+                                </label>
+                            </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                             <label for="scoretr">S Core TR</label></div>
-                            <div class="col-sm-8">
+                            <div class="col-sm-6">
                             <input name="scoretr" type="number" class="form-control form" id="scoretr" value="0"></div>
+                            <div class="col-sm-2">
+                                <label>
+                                    <input name="s20" type="checkbox"> Sudah terpenuhi
+                                </label>
+                            </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                             <label for="nyfgby">NYFGBY</label></div>
-                            <div class="col-sm-8">
+                            <div class="col-sm-6">
                             <input name="nyfgby" type="number" class="form-control form" id="nyfgby" value="0"></div>
+                            <div class="col-sm-2">
+                                <label>
+                                    <input name="s21" type="checkbox"> Sudah terpenuhi
+                                </label>
+                            </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                             <label for="jtr">JTR</label></div>
-                            <div class="col-sm-8">
+                            <div class="col-sm-6">
                             <input name="jtr" type="number" class="form-control form" id="jtr" value="0"></div>
+                            <div class="col-sm-2">
+                                <label>
+                                    <input name="s22" type="checkbox"> Sudah terpenuhi
+                                </label>
+                            </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-4">
                             <label for="keterangan">Keterangan</label></div>
                             <div class="col-sm-8">
                             <input name="keterangan" type="text" class="form-control form" id="keterangan"></div>
+
                         </div>
                         <div class="row">
                          </div>
