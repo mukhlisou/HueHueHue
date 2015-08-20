@@ -8,6 +8,7 @@
                     <li><a href="{{ URL::to('/') }}">Home</a></li>
                 </ul>
                 <ul id = "right" class="nav navbar-nav navbar-right">
+                    <li><a href="{{ URL::to('/mailconfig') }}">Mail Config</a></li>
                     <li><a href="{{ URL::to('/auth/logout') }}">Logout</a></li>
                 </ul>
                 <ul id = "right2" class = "nav navbar-nav">
