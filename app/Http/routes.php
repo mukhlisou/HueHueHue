@@ -24,6 +24,9 @@ Route::post('/edit/{id}',['middleware' => 'auth', 'uses' =>'HomeController@edit'
 Route::get('/export',['middleware' => 'auth', 'uses' =>'HomeController@export']);
 Route::post('/import',['middleware' => 'auth', 'uses' =>'HomeController@import']);
 Route::get('/detail/{id}',['middleware' => 'auth', 'uses' =>'HomeController@detail']);
+Route::get('/total',['middleware' => 'auth', 'uses' =>'HomeController@total']);
+Route::get('/nyala',['middleware' => 'auth', 'uses' =>'HomeController@nyala']);
+Route::get('/belum',['middleware' => 'auth', 'uses' =>'HomeController@belum']);
 
 
 /*kita bikin alur buat pindah2 halaman disini*/

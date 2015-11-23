@@ -9,7 +9,14 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
 <script>
     $(document).ready( function () {
-        $('#datatable').DataTable( { "ordering": true, "paging":false,
+        $('#datatable').DataTable( { "ordering": true, "paging":true, "pageLength": 20,
+            "scrollY":        "600px",
+            "scrollX":        true,
+            "scrollCollapse": true,
+        "bLengthChange": false,
+        "fixedColumns":   {
+            leftColumns: 1
+        },
 
 
             "fnRowCallback": function( nRow, aData, iDisplayIndex, iDisplayIndexFull ) {
@@ -32,6 +39,14 @@
                 });
             }
         });
+$(document).ready(function() {
+    $('#infototal').DataTable({
+        "ordering": false, "paging":false,
+        "bLengthChange": false,
+    "bFilter": false,
+    "bInfo": false,
+    });
+} );
     } );
 
 </script>

@@ -23,8 +23,8 @@ class HomeController extends Controller {
 	*/
 	public function index()
 	{
-		$monitor = MonitorModel::all();
-        return view('play', ['monitor' => $monitor]);	
+
+        return view('play');
 	}
 
 	public function delete($id)
@@ -49,6 +49,18 @@ class HomeController extends Controller {
     }
 	public function create(){
 		return view('create');
+	}
+	public function total(){
+		$monitor = MonitorModel::all();
+		return view('total', ['monitor' => $monitor]);
+	}
+	public function nyala(){
+		$monitor = MonitorModel::all();
+		return view('nyala', ['monitor' => $monitor]);
+	}
+	public function belum(){
+		$monitor = MonitorModel::all();
+		return view('belum', ['monitor' => $monitor]);
 	}
 
 	public function add()

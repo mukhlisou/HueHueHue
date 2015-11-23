@@ -7,6 +7,9 @@
                 <ul class="nav navbar-nav">
                     <li><a href="{{ URL::to('/') }}">Home</a></li>
                 </ul>
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ URL::to('/total') }}">Total</a></li>
+                </ul>
                 <ul id = "right" class="nav navbar-nav navbar-right">
                     <li><a href="{{ URL::to('/auth/logout') }}">Logout</a></li>
                 </ul>
