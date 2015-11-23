@@ -27,6 +27,8 @@ Route::get('/detail/{id}',['middleware' => 'auth', 'uses' =>'HomeController@deta
 Route::get('/total',['middleware' => 'auth', 'uses' =>'HomeController@total']);
 Route::get('/nyala',['middleware' => 'auth', 'uses' =>'HomeController@nyala']);
 Route::get('/belum',['middleware' => 'auth', 'uses' =>'HomeController@belum']);
+Route::get('/mailconfig',['middleware' => 'auth', 'uses' =>'HomeController@mailconfig']);
+Route::post('/mailconfig/edit',['middleware' => 'auth', 'uses' =>'HomeController@editmail']);
 
 
 /*kita bikin alur buat pindah2 halaman disini*/
