@@ -17,7 +17,7 @@
                     @endif
                 </div>
             </div><?php $idpelanggan = $row->idpelanggan;
-            $urls ='/edit/'.$idpelanggan ?>
+            $urls ='/edit_belum/'.$idpelanggan ?>
             <form action="{{URL::to($urls)}}" method="post">
                 <div class="col-md-12">
 

@@ -392,6 +392,15 @@
                             <input name="keterangan" type="text" class="form-control form" id="keterangan"></div>
 
                         </div>
+                        <div class="form-group">
+                            <div class="col-sm-4">
+                            <label for="400ID">sudah menyala</label></div>
+                            <div class="col-sm-2">
+                                <label>
+                                    <input name="sudah_nyala" type="checkbox">
+                                </label>
+                            </div>
+                        </div>
                         <div class="row">
                          </div>
 

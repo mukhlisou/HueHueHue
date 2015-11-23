@@ -10,7 +10,7 @@ class MonitorModel extends Model {
 						   'sla','statuspengerjaan','lbsman','lbsmot','lbsmot','sbog','pb','OD160','OD250','OD400',
 						   'OD630','ID400','ID630','OD4','ID4','ID6','ID8','sktm300','sktm240','sutm','skutm','scoretm',
 						   'scoretr','nyfgby','jtr','keterangan','s1','s2','s3','s4','s5','s6','s7','s8','s9','s10','s11',
-							's12','s13','s14','s15','s16','s17','s18','s19','s20','s21','s22'];
+							's12','s13','s14','s15','s16','s17','s18','s19','s20','s21','s22','sudah_nyala'];
 
     protected $table = 'monitor';
 

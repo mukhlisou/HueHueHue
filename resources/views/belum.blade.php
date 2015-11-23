@@ -106,7 +106,7 @@
                             ?>
                             <a class="btn" href="{{URL::to($urls)}}">Delete</a>
                             <?php $lala = $field->id;
-                            $urlu = '/update/'.$lala;
+                            $urlu = '/update_belum/'.$lala;
                             ?>
                             <a class="btn" href="{{URL::to($urlu)}}">Edit</a>
                         </td>

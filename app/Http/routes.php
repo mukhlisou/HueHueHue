@@ -20,7 +20,11 @@ Route::get('/delete/{id}',['middleware' => 'auth', 'uses' =>'HomeController@dele
 Route::get('/create',['middleware' => 'auth', 'uses' =>'HomeController@create']);
 Route::post('/create/add',['middleware' => 'auth', 'uses' =>'HomeController@add']);
 Route::get('/update/{id}',['middleware' => 'auth', 'uses' =>'HomeController@update']);
+Route::get('/update_belum/{id}',['middleware' => 'auth', 'uses' =>'HomeController@update_belum']);
+Route::get('/update_nyala/{id}',['middleware' => 'auth', 'uses' =>'HomeController@update_nyala']);
 Route::post('/edit/{id}',['middleware' => 'auth', 'uses' =>'HomeController@edit']);
+Route::post('/edit_belum/{id}',['middleware' => 'auth', 'uses' =>'HomeController@edit_belum']);
+Route::post('/edit_nyala/{id}',['middleware' => 'auth', 'uses' =>'HomeController@edit_nyala']);
 Route::get('/export',['middleware' => 'auth', 'uses' =>'HomeController@export']);
 Route::post('/import',['middleware' => 'auth', 'uses' =>'HomeController@import']);
 Route::get('/detail/{id}',['middleware' => 'auth', 'uses' =>'HomeController@detail']);
