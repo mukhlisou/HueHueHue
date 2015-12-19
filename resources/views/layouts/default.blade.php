@@ -15,7 +15,7 @@
             "scrollCollapse": true,
         "bLengthChange": false,
         "fixedColumns":   {
-            leftColumns: 1
+            leftColumns: 2
         },
 
 
