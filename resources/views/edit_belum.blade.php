@@ -407,7 +407,7 @@
                             <div class="col-sm-4">
                                 <label for="nyfgby">NYFGBY</label></div>
                             <div class="col-sm-6">
-                                <input name="nyfgby" type="number" class="form-control form" id="nyfgby" value="{{$row->nfgby}}"></div>
+                                <input name="nyfgby" type="number" class="form-control form" id="nyfgby" value="{{$row->nyfgby}}"></div>
                             <div class="col-sm-2">
                                 <label>
                                     @if($row->s21 =='on') <input name="s21" type="checkbox" checked=checked> Sudah terpenuhi
