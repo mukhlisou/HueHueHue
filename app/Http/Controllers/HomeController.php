@@ -18,7 +18,7 @@ class HomeController extends Controller {
 	| Home Controller
 	|--------------------------------------------------------------------------
 	|
-	| This controller renders your application's "dashboard" for users that
+	| This controller renders your application's 'dashboard' for users that
 	| are authenticated. Of course, you are free to change or remove the
 	| controller as you wish. It is just here to get your app started!
 	|
@@ -99,14 +99,14 @@ class HomeController extends Controller {
         $array['password'] = $password;
 
         $data = var_export($array, 1);
-        if(File::put(base_path() . '\config\mail.php', "<?php\n return $data ;")) 
+        if(File::put(base_path() . '\config\mail.php', '<?php\n return $data ;')) 
         {
             return $this->mailconfig();
         }
         else
         {
             return redirect()->back()
-                ->withErrors(["something happened"])
+                ->withErrors(['something happened'])
                 ->withInput();
         }
     }
@@ -335,7 +335,7 @@ class HomeController extends Controller {
             $data->lamadaya = Input::get('lamadaya');
             $data->tarifbaru = Input::get('tarifbaru');
             $data->dayabaru = Input::get('dayabaru');
-            $data->idpelanggan = Input::get('idpelanggan');
+            $data->idpelanggan = $idpelanggan;
             $data->namapelanggan = Input::get('namapelanggan');
             $data->alamat = Input::get('alamat');
             $data->tanggalbayarbp = Input::get('tanggalbayarbp');
@@ -505,7 +505,7 @@ class HomeController extends Controller {
             $data->lamadaya = Input::get('lamadaya');
             $data->tarifbaru = Input::get('tarifbaru');
             $data->dayabaru = Input::get('dayabaru');
-            $data->idpelanggan = Input::get('idpelanggan');
+            $data->idpelanggan = $idpelanggan;
             $data->namapelanggan = Input::get('namapelanggan');
             $data->alamat = Input::get('alamat');
             $data->tanggalbayarbp = Input::get('tanggalbayarbp');
@@ -675,7 +675,7 @@ class HomeController extends Controller {
             $data->lamadaya = Input::get('lamadaya');
             $data->tarifbaru = Input::get('tarifbaru');
             $data->dayabaru = Input::get('dayabaru');
-            $data->idpelanggan = Input::get('idpelanggan');
+            $data->idpelanggan = $idpelanggan;
             $data->namapelanggan = Input::get('namapelanggan');
             $data->alamat = Input::get('alamat');
             $data->tanggalbayarbp = Input::get('tanggalbayarbp');
@@ -833,7 +833,7 @@ class HomeController extends Controller {
 		$file = Input::file('file')->move(public_path('file'));
 		$check =Input::file('file')->getClientOriginalExtension();
 		
-		if($check == "xls" || $check == "xlsx" || $check == "csv"){
+		if($check == 'xls' || $check == 'xlsx' || $check == 'csv'){
 			
 			\Excel::load($file, function($reader) {
 
@@ -1024,143 +1024,215 @@ class HomeController extends Controller {
 		
 		\Excel::create('Data Monitoring Pelayanan Penyambungan', function($excel) {
 
-		// Set the title
-		$excel->setTitle('');
+    		// Set the title
+    		$excel->setTitle('');
 
-        $excel->sheet('Belum Menyala', function($sheet) {
-        
-            // Sheet manipulation
-            $sheet->setAutoSize(false);
+            $excel->sheet('Belum Menyala', function($sheet) {
             
-            $sheet->row(1, array('No','No Agenda','Tarif Lama','Lama Daya','Tarif Baru','Daya Baru','ID Pelanggan',
-                                 'Nama Pelanggan','Alamat','Tanggal Bayar BP','Pengawas','Pelaksana','No SPK','Jenis Pekerjaan',
-                                 'Koordinat Lokasi',null,'SLA','Status / Progress Pengerjaan','Kubikel',null,null,null,'Trafo',null,null,
-                                 null,null,null,'PHBTR / Rak TR',null,null,null,'SKTM',null,'SUTM','SKUTM','S Core TM',
-                                 'S Core TR','NYFGBY','JTR','Keterangan', 'Sudah Menyala'));
-            $sheet->row(2, array(null,null,null,null,null,null,null,null,null,null,null,null,null,null,
-                                 'X','Y',null,null,'LBS Man','LBS Mot','CBOG','PB','160 OD','250 OD','400 OD',
-                                 '630 OD','400 ID','630 ID','4 OD','4 ID','6 ID','8 ID','3x300','3x240',null,null,'1x35',
-                                 '1x240','4x95','3x70 + 50',null,null));
+                // Sheet manipulation
+                $sheet->setAutoSize(false);
+                
+                $sheet->row(1, array('No','No Agenda','Tarif Lama','Lama Daya','Tarif Baru','Daya Baru','ID Pelanggan',
+                                     'Nama Pelanggan','Alamat','Tanggal Bayar BP','Pengawas','Pelaksana','No SPK','Jenis Pekerjaan',
+                                     'Koordinat Lokasi',null,'SLA','Status / Progress Pengerjaan','Kubikel',null,null,null,'Trafo',null,null,
+                                     null,null,null,'PHBTR / Rak TR',null,null,null,'SKTM',null,'SUTM','SKUTM','S Core TM',
+                                     'S Core TR','NYFGBY','JTR','Keterangan', 'Sudah Menyala'));
+                $sheet->row(2, array(null,null,null,null,null,null,null,null,null,null,null,null,null,null,
+                                     'X','Y',null,null,'LBS Man','LBS Mot','CBOG','PB','160 OD','250 OD','400 OD',
+                                     '630 OD','400 ID','630 ID','4 OD','4 ID','6 ID','8 ID','3x300','3x240',null,null,'1x35',
+                                     '1x240','4x95','3x70 + 50',null,null));
 
-            $belum = MonitorModel::all()->where('sudah_nyala',0);
-            //dd($monitor);
-            $index = 3;
-            foreach ($belum as $row_belum) {
-                $sheet->row($index, $row_belum->getAttributes());
-                $sheet->row($index, array($index-2));
-                $index = $index+1;
-            }
-            $sheet->mergeCells('A1:A2');
-            $sheet->mergeCells('B1:B2');
-            $sheet->mergeCells('C1:C2');
-            $sheet->mergeCells('D1:D2');
-            $sheet->mergeCells('E1:E2');
-            $sheet->mergeCells('F1:F2');
-            $sheet->mergeCells('G1:G2');
-            $sheet->mergeCells('H1:H2');
-            $sheet->mergeCells('I1:I2');
-            $sheet->mergeCells('J1:J2');
-            $sheet->mergeCells('K1:K2');
-            $sheet->mergeCells('L1:L2');
-            $sheet->mergeCells('M1:M2');
-            $sheet->mergeCells('N1:N2');
-            $sheet->mergeCells('O1:P1');
-            $sheet->mergeCells('Q1:Q2');
-            $sheet->mergeCells('R1:R2');
-            $sheet->mergeCells('S1:V1');
-            $sheet->mergeCells('W1:AB1');
-            $sheet->mergeCells('AC1:AF1');
-            $sheet->mergeCells('AG1:AH1');
-            $sheet->mergeCells('AI1:AI2');
-            $sheet->mergeCells('AJ1:AJ2');
-            $sheet->mergeCells('AO1:AO2');
-            $sheet->mergeCells('AP1:AP2');
-            $sheet->cells('A1:AP2', function($cells) {
+                $belum = MonitorModel::all()->where('sudah_nyala',0);
+                //dd($monitor);
+                $index = 3;
+                foreach ($belum as $row_belum) {
+                    $arr_belum = array_except($row_belum->getAttributes(), array('s1','s2','s3','s4','s5','s6','s7','s8','s9','s10','s11','s12','s13','s14','s15','s16','s17','s18','s19','s20','s21','s22'));
+                    $sheet->row($index, $arr_belum);
+                    $sheet->row($index, array($index-2));
+                    $index = $index+1;
+                }
+                $sheet->mergeCells('A1:A2');
+                $sheet->mergeCells('B1:B2');
+                $sheet->mergeCells('C1:C2');
+                $sheet->mergeCells('D1:D2');
+                $sheet->mergeCells('E1:E2');
+                $sheet->mergeCells('F1:F2');
+                $sheet->mergeCells('G1:G2');
+                $sheet->mergeCells('H1:H2');
+                $sheet->mergeCells('I1:I2');
+                $sheet->mergeCells('J1:J2');
+                $sheet->mergeCells('K1:K2');
+                $sheet->mergeCells('L1:L2');
+                $sheet->mergeCells('M1:M2');
+                $sheet->mergeCells('N1:N2');
+                $sheet->mergeCells('O1:P1');
+                $sheet->mergeCells('Q1:Q2');
+                $sheet->mergeCells('R1:R2');
+                $sheet->mergeCells('S1:V1');
+                $sheet->mergeCells('W1:AB1');
+                $sheet->mergeCells('AC1:AF1');
+                $sheet->mergeCells('AG1:AH1');
+                $sheet->mergeCells('AI1:AI2');
+                $sheet->mergeCells('AJ1:AJ2');
+                $sheet->mergeCells('AO1:AO2');
+                $sheet->mergeCells('AP1:AP2');
+                $sheet->cells('A1:AP2', function($cells) {
 
-                // manipulate the range of cells
-                $cells->setBackground('#4BACC6');
-                $cells->setFontColor('#ffffff');
-                $cells->setFontSize(11);
-                $cells->setFontWeight('bold');
-                $cells->setAlignment('center');
-                $cells->setVAlignment('center');
+                    // manipulate the range of cells
+                    $cells->setBackground('#4BACC6');
+                    $cells->setFontColor('#ffffff');
+                    $cells->setFontSize(11);
+                    $cells->setFontWeight('bold');
+                    $cells->setAlignment('center');
+                    $cells->setVAlignment('center');
+                });
+                $sheet->setBorder('A1:AP2', 'thin');
+                $sheet->setWidth(array(
+                    'A' => 5,'B' => 12,'C' => 12,'D' => 12,'E' => 12,'F' => 12,'G' => 14,'H' => 20,'I' => 35,'J' => 16,'K' => 12,'L' => 11,'M' => 10,'N' => 17,'O' => 10,
+                    'P' => 10,'Q' => 10,'R' => 26,'S' => 10,'T' => 10,'U' => 10,'V' => 10,'W' => 10,'X' => 10,'Y' => 10,'Z' => 10,'AA' => 10,'AB' => 10,'AC' => 10,'AD' => 10,
+                    'AE' => 10,'AF' => 10,'AG' => 10,'AH' => 10,'AI' => 10,'AJ' => 10,'AK' => 10,'AL' => 10,'AM' => 10,'AN' => 10,'AO' => 30,'AP' => 20,
+                ));
+
             });
-            $sheet->setBorder('A1:AP2', 'thin');
-            $sheet->setWidth(array(
-                'A' => 5,'B' => 12,'C' => 12,'D' => 12,'E' => 12,'F' => 12,'G' => 14,'H' => 20,'I' => 35,'J' => 16,'K' => 12,'L' => 11,'M' => 10,'N' => 17,'O' => 10,
-                'P' => 10,'Q' => 10,'R' => 26,'S' => 10,'T' => 10,'U' => 10,'V' => 10,'W' => 10,'X' => 10,'Y' => 10,'Z' => 10,'AA' => 10,'AB' => 10,'AC' => 10,'AD' => 10,
-                'AE' => 10,'AF' => 10,'AG' => 10,'AH' => 10,'AI' => 10,'AJ' => 10,'AK' => 10,'AL' => 10,'AM' => 10,'AN' => 10,'AO' => 30,'AP' => 20,
-            ));
 
-        });
+    		$excel->sheet('sudah Menyala', function($sheet) {
+    		
+    			// Sheet manipulation
+    			$sheet->setAutoSize(false);
+    			
+    			$sheet->row(1, array('No','No Agenda','Tarif Lama','Lama Daya','Tarif Baru','Daya Baru','ID Pelanggan',
+    								 'Nama Pelanggan','Alamat','Tanggal Bayar BP','Pengawas','Pelaksana','No SPK','Jenis Pekerjaan',
+    								 'Koordinat Lokasi',null,'SLA','Status / Progress Pengerjaan','Kubikel',null,null,null,'Trafo',null,null,
+    								 null,null,null,'PHBTR / Rak TR',null,null,null,'SKTM',null,'SUTM','SKUTM','S Core TM',
+    								 'S Core TR','NYFGBY','JTR','Keterangan', 'Sudah Menyala'));
+    			$sheet->row(2, array(null,null,null,null,null,null,null,null,null,null,null,null,null,null,
+    								 'X','Y',null,null,'LBS Man','LBS Mot','CBOG','PB','160 OD','250 OD','400 OD',
+    								 '630 OD','400 ID','630 ID','4 OD','4 ID','6 ID','8 ID','3x300','3x240',null,null,'1x35',
+    								 '1x240','4x95','3x70 + 50',null,null));
 
-		$excel->sheet('sudah Menyala', function($sheet) {
-		
-			// Sheet manipulation
-			$sheet->setAutoSize(false);
-			
-			$sheet->row(1, array('No','No Agenda','Tarif Lama','Lama Daya','Tarif Baru','Daya Baru','ID Pelanggan',
-								 'Nama Pelanggan','Alamat','Tanggal Bayar BP','Pengawas','Pelaksana','No SPK','Jenis Pekerjaan',
-								 'Koordinat Lokasi',null,'SLA','Status / Progress Pengerjaan','Kubikel',null,null,null,'Trafo',null,null,
-								 null,null,null,'PHBTR / Rak TR',null,null,null,'SKTM',null,'SUTM','SKUTM','S Core TM',
-								 'S Core TR','NYFGBY','JTR','Keterangan', 'Sudah Menyala'));
-			$sheet->row(2, array(null,null,null,null,null,null,null,null,null,null,null,null,null,null,
-								 'X','Y',null,null,'LBS Man','LBS Mot','CBOG','PB','160 OD','250 OD','400 OD',
-								 '630 OD','400 ID','630 ID','4 OD','4 ID','6 ID','8 ID','3x300','3x240',null,null,'1x35',
-								 '1x240','4x95','3x70 + 50',null,null));
+    			$sudah = MonitorModel::all()->where('sudah_nyala',1);
+    			//dd($monitor);
+    			$index = 3;
+    			foreach ($sudah as $row_sudah) {
+    				$arr_sudah = array_except($row_sudah->getAttributes(), array('s1','s2','s3','s4','s5','s6','s7','s8','s9','s10','s11','s12','s13','s14','s15','s16','s17','s18','s19','s20','s21','s22'));
+                    $sheet->row($index, $arr_sudah);
+    				$sheet->row($index, array($index-2));
+    				$index = $index+1;
+    			}
+    			$sheet->mergeCells('A1:A2');
+    			$sheet->mergeCells('B1:B2');
+    			$sheet->mergeCells('C1:C2');
+    			$sheet->mergeCells('D1:D2');
+    			$sheet->mergeCells('E1:E2');
+    			$sheet->mergeCells('F1:F2');
+    			$sheet->mergeCells('G1:G2');
+    			$sheet->mergeCells('H1:H2');
+    			$sheet->mergeCells('I1:I2');
+    			$sheet->mergeCells('J1:J2');
+    			$sheet->mergeCells('K1:K2');
+    			$sheet->mergeCells('L1:L2');
+    			$sheet->mergeCells('M1:M2');
+    			$sheet->mergeCells('N1:N2');
+    			$sheet->mergeCells('O1:P1');
+    			$sheet->mergeCells('Q1:Q2');
+    			$sheet->mergeCells('R1:R2');
+    			$sheet->mergeCells('S1:V1');
+    			$sheet->mergeCells('W1:AB1');
+    			$sheet->mergeCells('AC1:AF1');
+    			$sheet->mergeCells('AG1:AH1');
+    			$sheet->mergeCells('AI1:AI2');
+    			$sheet->mergeCells('AJ1:AJ2');
+    			$sheet->mergeCells('AO1:AO2');
+                $sheet->mergeCells('AP1:AP2');
+    			$sheet->cells('A1:AP2', function($cells) {
 
-			$sudah = MonitorModel::all()->where('sudah_nyala',1);
-			//dd($monitor);
-			$index = 3;
-			foreach ($sudah as $row_sudah) {
-				$sheet->row($index, $row_sudah->getAttributes());
-				$sheet->row($index, array($index-2));
-				$index = $index+1;
-			}
-			$sheet->mergeCells('A1:A2');
-			$sheet->mergeCells('B1:B2');
-			$sheet->mergeCells('C1:C2');
-			$sheet->mergeCells('D1:D2');
-			$sheet->mergeCells('E1:E2');
-			$sheet->mergeCells('F1:F2');
-			$sheet->mergeCells('G1:G2');
-			$sheet->mergeCells('H1:H2');
-			$sheet->mergeCells('I1:I2');
-			$sheet->mergeCells('J1:J2');
-			$sheet->mergeCells('K1:K2');
-			$sheet->mergeCells('L1:L2');
-			$sheet->mergeCells('M1:M2');
-			$sheet->mergeCells('N1:N2');
-			$sheet->mergeCells('O1:P1');
-			$sheet->mergeCells('Q1:Q2');
-			$sheet->mergeCells('R1:R2');
-			$sheet->mergeCells('S1:V1');
-			$sheet->mergeCells('W1:AB1');
-			$sheet->mergeCells('AC1:AF1');
-			$sheet->mergeCells('AG1:AH1');
-			$sheet->mergeCells('AI1:AI2');
-			$sheet->mergeCells('AJ1:AJ2');
-			$sheet->mergeCells('AO1:AO2');
-            $sheet->mergeCells('AP1:AP2');
-			$sheet->cells('A1:AP2', function($cells) {
+    				// manipulate the range of cells
+    				$cells->setBackground('#4BACC6');
+    				$cells->setFontColor('#ffffff');
+    				$cells->setFontSize(11);
+    				$cells->setFontWeight('bold');
+    				$cells->setAlignment('center');
+    				$cells->setVAlignment('center');
+    			});
+    			$sheet->setBorder('A1:AP2', 'thin');
+    			$sheet->setWidth(array(
+    				'A'	=> 5,'B' => 12,'C' => 12,'D' => 12,'E' => 12,'F' => 12,'G' => 14,'H' => 20,'I' => 35,'J' => 16,'K' => 12,'L' => 11,'M' => 10,'N' => 17,'O' => 10,
+    				'P' => 10,'Q' => 10,'R' => 26,'S' => 10,'T' => 10,'U' => 10,'V' => 10,'W' => 10,'X' => 10,'Y' => 10,'Z' => 10,'AA' => 10,'AB' => 10,'AC' => 10,'AD' => 10,
+    				'AE' => 10,'AF' => 10,'AG' => 10,'AH' => 10,'AI' => 10,'AJ' => 10,'AK' => 10,'AL' => 10,'AM' => 10,'AN' => 10,'AO' => 30,'AP' => 20,
+    			));
 
-				// manipulate the range of cells
-				$cells->setBackground('#4BACC6');
-				$cells->setFontColor('#ffffff');
-				$cells->setFontSize(11);
-				$cells->setFontWeight('bold');
-				$cells->setAlignment('center');
-				$cells->setVAlignment('center');
-			});
-			$sheet->setBorder('A1:AP2', 'thin');
-			$sheet->setWidth(array(
-				'A'	=> 5,'B' => 12,'C' => 12,'D' => 12,'E' => 12,'F' => 12,'G' => 14,'H' => 20,'I' => 35,'J' => 16,'K' => 12,'L' => 11,'M' => 10,'N' => 17,'O' => 10,
-				'P' => 10,'Q' => 10,'R' => 26,'S' => 10,'T' => 10,'U' => 10,'V' => 10,'W' => 10,'X' => 10,'Y' => 10,'Z' => 10,'AA' => 10,'AB' => 10,'AC' => 10,'AD' => 10,
-				'AE' => 10,'AF' => 10,'AG' => 10,'AH' => 10,'AI' => 10,'AJ' => 10,'AK' => 10,'AL' => 10,'AM' => 10,'AN' => 10,'AO' => 30,'AP' => 20,
-			));
-
-		});
+    		});
 
 		})->download('xls');
 	}
+
+    public function import_template()
+    {
+        
+        \Excel::create('[TEMPLATE] Monitoring Pelayanan Penyambungan', function($excel) {
+
+            // Set the title
+            $excel->setTitle('');
+
+            $excel->sheet('Template', function($sheet) {
+            
+                // Sheet manipulation
+                $sheet->setAutoSize(false);
+                
+                $sheet->row(1, array('No','No Agenda','Tarif Lama','Lama Daya','Tarif Baru','Daya Baru','ID Pelanggan',
+                                     'Nama Pelanggan','Alamat','Tanggal Bayar BP','Pengawas','Pelaksana','No SPK','Jenis Pekerjaan',
+                                     'Koordinat Lokasi',null,'SLA','Status / Progress Pengerjaan','Kubikel',null,null,null,'Trafo',null,null,
+                                     null,null,null,'PHBTR / Rak TR',null,null,null,'SKTM',null,'SUTM','SKUTM','S Core TM',
+                                     'S Core TR','NYFGBY','JTR','Keterangan', 'Sudah Menyala'));
+                $sheet->row(2, array(null,null,null,null,null,null,null,null,null,null,null,null,null,null,
+                                     'X','Y',null,null,'LBS Man','LBS Mot','CBOG','PB','160 OD','250 OD','400 OD',
+                                     '630 OD','400 ID','630 ID','4 OD','4 ID','6 ID','8 ID','3x300','3x240',null,null,'1x35',
+                                     '1x240','4x95','3x70 + 50',null,null));
+
+                $sheet->mergeCells('A1:A2');
+                $sheet->mergeCells('B1:B2');
+                $sheet->mergeCells('C1:C2');
+                $sheet->mergeCells('D1:D2');
+                $sheet->mergeCells('E1:E2');
+                $sheet->mergeCells('F1:F2');
+                $sheet->mergeCells('G1:G2');
+                $sheet->mergeCells('H1:H2');
+                $sheet->mergeCells('I1:I2');
+                $sheet->mergeCells('J1:J2');
+                $sheet->mergeCells('K1:K2');
+                $sheet->mergeCells('L1:L2');
+                $sheet->mergeCells('M1:M2');
+                $sheet->mergeCells('N1:N2');
+                $sheet->mergeCells('O1:P1');
+                $sheet->mergeCells('Q1:Q2');
+                $sheet->mergeCells('R1:R2');
+                $sheet->mergeCells('S1:V1');
+                $sheet->mergeCells('W1:AB1');
+                $sheet->mergeCells('AC1:AF1');
+                $sheet->mergeCells('AG1:AH1');
+                $sheet->mergeCells('AI1:AI2');
+                $sheet->mergeCells('AJ1:AJ2');
+                $sheet->mergeCells('AO1:AO2');
+                $sheet->mergeCells('AP1:AP2');
+                $sheet->cells('A1:AP2', function($cells) {
+
+                    // manipulate the range of cells
+                    $cells->setBackground('#4BACC6');
+                    $cells->setFontColor('#ffffff');
+                    $cells->setFontSize(11);
+                    $cells->setFontWeight('bold');
+                    $cells->setAlignment('center');
+                    $cells->setVAlignment('center');
+                });
+                $sheet->setBorder('A1:AP2', 'thin');
+                $sheet->setWidth(array(
+                    'A' => 5,'B' => 12,'C' => 12,'D' => 12,'E' => 12,'F' => 12,'G' => 14,'H' => 20,'I' => 35,'J' => 16,'K' => 12,'L' => 11,'M' => 10,'N' => 17,'O' => 10,
+                    'P' => 10,'Q' => 10,'R' => 26,'S' => 10,'T' => 10,'U' => 10,'V' => 10,'W' => 10,'X' => 10,'Y' => 10,'Z' => 10,'AA' => 10,'AB' => 10,'AC' => 10,'AD' => 10,
+                    'AE' => 10,'AF' => 10,'AG' => 10,'AH' => 10,'AI' => 10,'AJ' => 10,'AK' => 10,'AL' => 10,'AM' => 10,'AN' => 10,'AO' => 30,'AP' => 20,
+                ));
+
+            });
+
+        })->download('xls');
+    }
 }

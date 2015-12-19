@@ -27,7 +27,7 @@
                 <div class="col-md-3">
                     <?php $urls ='/import' ?>
                     <form method="POST" action="{{URL::to($urls)}}" accept-charset="UTF-8" enctype="multipart/form-data">
-                        <input type="hidden" name="_token" value="{{ csrf_token() }}"><label for="file" id="" class="">File</label> <input name="file" type="file" id="file">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}"><label for="file" id="" class="">Import</label> <input name="file" type="file" id="file">
                         <input type="submit" value="Import"> </form>
                     <!-- {{ Form::open(array('url'=>'/import','files'=>true)) }}
 
@@ -38,6 +38,8 @@
                             {{ Form::submit('Import') }}
 
                     {{ Form::close() }}-->
+                    <?php $urlex = '/import_template'; ?>
+                    <a class="btn" href="{{URL::to($urlex)}}">Download Template</a>
                 </div>
                 <div class="col-md-1" ></div>
                     <div class="col-md-3" >

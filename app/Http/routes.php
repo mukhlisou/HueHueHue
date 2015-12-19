@@ -27,6 +27,7 @@ Route::post('/edit_belum/{id}',['middleware' => 'auth', 'uses' =>'HomeController
 Route::post('/edit_nyala/{id}',['middleware' => 'auth', 'uses' =>'HomeController@edit_nyala']);
 Route::get('/export',['middleware' => 'auth', 'uses' =>'HomeController@export']);
 Route::post('/import',['middleware' => 'auth', 'uses' =>'HomeController@import']);
+Route::get('/import_template',['middleware' => 'auth', 'uses' =>'HomeController@import_template']);
 Route::get('/detail/{id}',['middleware' => 'auth', 'uses' =>'HomeController@detail']);
 Route::get('/total',['middleware' => 'auth', 'uses' =>'HomeController@total']);
 Route::get('/nyala',['middleware' => 'auth', 'uses' =>'HomeController@nyala']);
